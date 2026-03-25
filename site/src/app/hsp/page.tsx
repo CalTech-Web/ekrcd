@@ -172,21 +172,16 @@ export default function HspPage() {
         }}
       />
       {/* Hero */}
-      <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-primary-dark via-accent to-accent-light overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/soil.jpg"
-            alt="California farmland soil - EKRCD Healthy Soils Program serving Fresno, Kings, and Tulare Counties"
-            fill
-            className="object-cover opacity-20"
-            priority
-            sizes="100vw"
-            quality={75}
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-accent/60" />
-        <div className="hero-dots absolute inset-0" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+        <Image
+          src="/images/heroes/hero-hsp-corn-field.jpeg"
+          alt="Rows of corn growing in a California field, representing EKRCD Healthy Soils Program supporting on-farm soil health"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
               <Sprout size={16} />

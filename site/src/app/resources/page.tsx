@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Globe, Phone, ExternalLink, Droplets, Sprout } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -81,17 +82,29 @@ export default function ResourcesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* Hero */}
-      <section className="hero-texture relative flex items-center bg-gradient-to-br from-earth via-sand-dark to-sand overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-sand-dark/40" />
-        <div className="hero-dots absolute inset-0" />
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+        <Image
+          src="/images/heroes/hero-resources-vineyard.jpeg"
+          alt="Vineyard rows on a hillside in Central California, representing EKRCD conservation resource partners"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
-            Resource Partners
-          </h1>
-          <p className="mt-4 text-lg text-white/90 max-w-2xl leading-relaxed">
-            The agencies and organizations EKRCD collaborates with on
-            groundwater, soil, and land conservation work across the region.
-          </p>
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
+              <Globe size={16} />
+              Partner Agencies
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
+              Resource Partners
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
+              The agencies and organizations EKRCD collaborates with on
+              groundwater, soil, and land conservation work across the region.
+            </p>
+          </div>
         </div>
       </section>
 

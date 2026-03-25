@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   FileText,
@@ -247,23 +248,25 @@ export default function AgendasPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* Hero Banner */}
-      <section className="hero-texture relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
-        <div className="hero-dots absolute inset-0" />
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+        <Image
+          src="/images/heroes/hero-agendas-wheat.jpeg"
+          alt="Golden wheat ears in a California field, representing EKRCD public board meeting agendas and transparency"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <FileText size={20} className="text-white" />
-              </div>
-              <span className="text-white/80 text-sm font-medium uppercase tracking-wider">
-                Transparency
-              </span>
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
+              <FileText size={16} />
+              Transparency
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
               Board Meeting Agendas
             </h1>
-            <p className="mt-4 text-lg text-white/85 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
               Public archive of meeting agendas and board packets for the
               Excelsior-Kings River Resource Conservation District.
             </p>

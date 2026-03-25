@@ -17,16 +17,22 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-texture relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/soil.jpg')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/60" />
-        <div className="hero-dots absolute inset-0" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+        <Image
+          src="/images/heroes/hero-homepage-almond-blossoms.jpeg"
+          alt="Almond blossoms in full bloom across Central California farmland, representing EKRCD conservation in Fresno, Kings, and Tulare Counties"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <Image
                 src="/images/logo.jpg"
-                alt="EKRCD - Excelsior-Kings River Resource Conservation District logo"
+                alt="EKRCD logo"
                 width={64}
                 height={64}
                 className="rounded-full border-2 border-white/30"

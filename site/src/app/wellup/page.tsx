@@ -139,21 +139,16 @@ export default function WellupPage() {
         }}
       />
       {/* Hero */}
-      <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-secondary-dark via-secondary to-secondary-light overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/wellup-1.jpg"
-            alt="Agricultural irrigation equipment - WELLUP water efficiency program in Central Valley"
-            fill
-            className="object-cover opacity-20"
-            priority
-            sizes="100vw"
-            quality={75}
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary-dark/90 to-secondary/60" />
-        <div className="hero-dots absolute inset-0" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+        <Image
+          src="/images/heroes/hero-wellup-irrigation.jpeg"
+          alt="Irrigation sprinklers watering vineyard rows in Central Valley, representing EKRCD WELLUP water efficiency program"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
               <Droplets size={16} />
