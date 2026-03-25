@@ -19,14 +19,22 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Healthy Soils Program",
+  title: "Healthy Soils Program - Grants Up to $200,000",
   description:
-    "EKRCD received $5 million from CDFA to fund on-farm soil health projects up to $200,000 per project in Fresno, Kings, and Tulare Counties. Practices include compost application, cover crops, mulching, and more.",
+    "EKRCD's CDFA Healthy Soils Program funds compost, cover crops, mulching, and other soil health practices. Grants up to $200,000 per farm in Fresno, Kings, and Tulare Counties.",
+  alternates: { canonical: "/hsp" },
   openGraph: {
-    title: "Healthy Soils Program | EKRCD",
+    title: "Healthy Soils Program - Grants Up to $200,000 | EKRCD",
     description:
-      "CDFA-funded on-farm soil health projects up to $200,000 per project across Fresno, Kings, and Tulare Counties.",
+      "CDFA-funded soil health grants up to $200,000 per farm for compost application, cover crops, mulching, and more. Serving growers in Fresno, Kings, and Tulare Counties.",
     url: "https://ekrcd.org/hsp",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Healthy Soils Program - Grants Up to $200,000 | EKRCD",
+    description:
+      "CDFA-funded grants up to $200,000 for on-farm soil health projects across Fresno, Kings, and Tulare Counties.",
   },
 };
 
@@ -95,21 +103,80 @@ const resources = [
 ];
 
 const galleryImages = [
-  { src: "/images/soil.jpg", alt: "Healthy soil close-up" },
-  { src: "/images/citrus-orchard.jpg", alt: "Citrus orchard" },
-  { src: "/images/vineyard.jpg", alt: "Vineyard rows" },
-  { src: "/images/compost.jpg", alt: "Compost application on farmland" },
+  {
+    src: "/images/soil.jpg",
+    alt: "Healthy soil organic matter - EKRCD Healthy Soils Program result",
+  },
+  {
+    src: "/images/citrus-orchard.jpg",
+    alt: "Citrus orchard in Kings County qualifying for Healthy Soils Program grants",
+  },
+  {
+    src: "/images/vineyard.jpg",
+    alt: "Vineyard cover crop rows - eligible practice under CDFA Healthy Soils Program",
+  },
+  {
+    src: "/images/compost.jpg",
+    alt: "Compost application on California farmland - EKRCD Healthy Soils Program funded practice",
+  },
 ];
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Healthy Soils Program",
+      item: "https://ekrcd.org/hsp",
+    },
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  name: "Healthy Soils Program",
+  alternateName: "HSP",
+  description:
+    "CDFA-funded soil health grant program providing up to $200,000 per farm project for practices including compost application, cover crops, mulching, and residue management across Fresno, Kings, and Tulare Counties.",
+  provider: {
+    "@type": "GovernmentOrganization",
+    name: "Excelsior-Kings River Resource Conservation District",
+    alternateName: "EKRCD",
+    url: "https://ekrcd.org",
+  },
+  serviceType: "Agricultural Soil Health Grant",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Fresno County, CA" },
+    { "@type": "AdministrativeArea", name: "Kings County, CA" },
+    { "@type": "AdministrativeArea", name: "Tulare County, CA" },
+  ],
+  url: "https://ekrcd.org/hsp",
+};
 
 export default function HspPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([breadcrumbJsonLd, serviceJsonLd]),
+        }}
+      />
       {/* Hero */}
       <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-primary-dark via-accent to-accent-light overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/soil.jpg"
-            alt="Healthy Soils Program"
+            alt="California farmland soil - EKRCD Healthy Soils Program serving Fresno, Kings, and Tulare Counties"
             fill
             className="object-cover opacity-20"
             priority
@@ -405,7 +472,14 @@ export default function HspPage() {
               </h2>
               <p className="text-text-muted mb-8">
                 Questions about whether your farm qualifies or what to expect
-                from the process? Call or email our team.
+                from the process?{" "}
+                <Link
+                  href="/contact"
+                  className="text-accent font-semibold hover:underline"
+                >
+                  Send us a message
+                </Link>{" "}
+                or reach us directly below.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a
@@ -423,6 +497,25 @@ export default function HspPage() {
                   (559) 309-4030
                 </a>
               </div>
+              <p className="mt-8 text-sm text-text-muted">
+                Also looking to reduce water use on your operation? Learn about
+                the{" "}
+                <Link
+                  href="/wellup"
+                  className="text-secondary font-semibold hover:underline"
+                >
+                  WELLUP water efficiency program
+                </Link>
+                , which offers free pump tests and irrigation evaluations. You
+                can also review our{" "}
+                <Link
+                  href="/resources"
+                  className="text-primary font-semibold hover:underline"
+                >
+                  resource partners
+                </Link>{" "}
+                for additional support agencies in the region.
+              </p>
             </div>
           </div>
         </section>

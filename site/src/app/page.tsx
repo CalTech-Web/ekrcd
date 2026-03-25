@@ -8,6 +8,8 @@ import {
   Sprout,
   ArrowRight,
   AlertTriangle,
+  Users,
+  BookOpen,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -24,7 +26,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 mb-6">
               <Image
                 src="/images/logo.jpg"
-                alt="EKRCD Logo"
+                alt="EKRCD - Excelsior-Kings River Resource Conservation District logo"
                 width={64}
                 height={64}
                 className="rounded-full border-2 border-white/30"
@@ -78,7 +80,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Transparency
+                Open Government &amp; Transparency
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
                 All board meeting agendas and packets are posted publicly.
@@ -145,7 +147,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Our Programs
+                CDFA-Funded Conservation Programs
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
                 Two active CDFA-funded programs open to growers across the
@@ -161,7 +163,7 @@ export default function HomePage() {
                 <div className="aspect-[16/9] relative">
                   <Image
                     src="/images/wellup-1.jpg"
-                    alt="WELLUP Program - Irrigation and pump efficiency"
+                    alt="WELLUP program - free pump efficiency testing and irrigation assistance for Central Valley growers"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -196,7 +198,7 @@ export default function HomePage() {
                 <div className="aspect-[16/9] relative">
                   <Image
                     src="/images/compost.jpg"
-                    alt="Healthy Soils Program - Compost application"
+                    alt="Healthy Soils Program - compost application funded by CDFA grant on California farm"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -221,6 +223,69 @@ export default function HomePage() {
                     million. Round 2 is now closed.
                   </p>
                 </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* About EKRCD Section */}
+      <ScrollReveal>
+        <section className="py-20 bg-sand">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                About EKRCD
+              </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                A locally governed public agency serving growers, landowners,
+                and communities across portions of Fresno, Kings, and Tulare
+                Counties.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Link
+                href="/board-of-directors"
+                className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+              >
+                <Users
+                  size={40}
+                  className="text-primary mb-4 group-hover:scale-110 transition-transform"
+                />
+                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
+                  Board of Directors
+                  <ArrowRight
+                    size={16}
+                    className="text-primary group-hover:translate-x-1 transition-transform"
+                  />
+                </h3>
+                <p className="text-text-muted text-sm">
+                  Five locally elected members set district policy and oversee
+                  conservation programs. Learn about the board and membership
+                  requirements.
+                </p>
+              </Link>
+
+              <Link
+                href="/resources"
+                className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+              >
+                <BookOpen
+                  size={40}
+                  className="text-secondary mb-4 group-hover:scale-110 transition-transform"
+                />
+                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
+                  Resource Partners
+                  <ArrowRight
+                    size={16}
+                    className="text-secondary group-hover:translate-x-1 transition-transform"
+                  />
+                </h3>
+                <p className="text-text-muted text-sm">
+                  EKRCD works alongside NRCS, Kings River Conservation District,
+                  Kings County Farm Bureau, and CARCD to deliver conservation
+                  services.
+                </p>
               </Link>
             </div>
           </div>

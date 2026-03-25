@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
-import { Globe, Phone, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { Globe, Phone, ExternalLink, Droplets, Sprout } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Resource Partners",
+  title: "Conservation Resource Partners - EKRCD",
   description:
-    "EKRCD partner organizations supporting conservation, agriculture, and natural resource management across California's Central Valley.",
+    "EKRCD's partner agencies - CARCD, Kings River Conservation District, Kings County Farm Bureau, and NRCS - supporting groundwater, soil, and land conservation in Central California.",
   alternates: { canonical: "/resources" },
+  openGraph: {
+    title: "Conservation Resource Partners - EKRCD",
+    description:
+      "Federal, state, and local partner agencies supporting EKRCD's groundwater sustainability and soil conservation work across Fresno, Kings, and Tulare Counties.",
+    url: "https://ekrcd.org/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "EKRCD Conservation Resource Partners",
+    description:
+      "Partner agencies including NRCS, CARCD, Kings River Conservation District, and Kings County Farm Bureau.",
+  },
 };
 
 const partners = [
@@ -40,9 +54,32 @@ const partners = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resource Partners",
+      item: "https://ekrcd.org/resources",
+    },
+  ],
+};
+
 export default function ResourcesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="hero-texture relative flex items-center bg-gradient-to-br from-earth via-sand-dark to-sand overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-sand-dark/40" />
@@ -64,7 +101,7 @@ export default function ResourcesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Our Partners
+                Conservation Partners Supporting EKRCD
               </h2>
               <p className="mt-4 text-text-muted leading-relaxed">
                 EKRCD does not work in isolation. Federal, state, and local
@@ -125,6 +162,40 @@ export default function ResourcesPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* EKRCD Programs CTA */}
+      <ScrollReveal>
+        <section className="py-16 bg-sand">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-4">
+                EKRCD Programs for Growers
+              </h2>
+              <p className="text-text-muted mb-8">
+                In addition to working with these partner agencies, EKRCD
+                administers two CDFA-funded programs directly available to
+                growers across the three-county region at no cost.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/wellup"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-xl hover:bg-secondary-light transition-all shadow-sm"
+                >
+                  <Droplets size={18} />
+                  WELLUP Water Efficiency Program
+                </Link>
+                <Link
+                  href="/hsp"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-all shadow-sm"
+                >
+                  <Sprout size={18} />
+                  Healthy Soils Program
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -11,9 +11,23 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Board Meeting Agendas",
+  title: "Board Meeting Agendas - EKRCD Public Records",
   description:
-    "Archive of public board meeting agendas and packets for the Excelsior-Kings River Resource Conservation District. Access current and past meeting documents as part of EKRCD's commitment to transparency.",
+    "Public archive of EKRCD board meeting agendas and packets since April 2024. Download current and past meeting documents from the Excelsior-Kings River RCD.",
+  alternates: { canonical: "/agendas" },
+  openGraph: {
+    title: "Board Meeting Agendas - EKRCD Public Records",
+    description:
+      "Download public board meeting agendas and packets for EKRCD going back to April 2024. Part of the district's commitment to open government transparency.",
+    url: "https://ekrcd.org/agendas",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "EKRCD Board Meeting Agendas",
+    description:
+      "Public archive of EKRCD board meeting agendas and packets since April 2024.",
+  },
 };
 
 type MeetingStatus = "Active" | "Canceled" | "Rescheduled" | "Special Meeting";
@@ -206,9 +220,32 @@ function getStatusConfig(status: MeetingStatus) {
   }
 }
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Board Meeting Agendas",
+      item: "https://ekrcd.org/agendas",
+    },
+  ],
+};
+
 export default function AgendasPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero Banner */}
       <section className="hero-texture relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
@@ -300,6 +337,31 @@ export default function AgendasPage() {
           ))}
         </div>
       </section>
+
+      {/* Related Links */}
+      <ScrollReveal>
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-text-muted text-sm">
+              Learn more about the people who govern EKRCD on the{" "}
+              <Link
+                href="/board-of-directors"
+                className="text-primary font-semibold hover:underline"
+              >
+                Board of Directors
+              </Link>{" "}
+              page, or{" "}
+              <Link
+                href="/contact"
+                className="text-secondary font-semibold hover:underline"
+              >
+                contact us
+              </Link>{" "}
+              with questions about district business.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
     </>
   );
 }

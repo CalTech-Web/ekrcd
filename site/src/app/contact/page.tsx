@@ -1,18 +1,55 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail, MapPin, Droplets, Sprout } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact EKRCD - Hanford, CA Conservation District",
   description:
-    "Get in touch with the Excelsior-Kings River Resource Conservation District. Reach us by phone, email, or visit our office in Hanford, CA.",
+    "Contact the Excelsior-Kings River Resource Conservation District in Hanford, CA. Call (559) 309-4030 or email info@ekrcd.org for WELLUP and Healthy Soils inquiries.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact EKRCD - Hanford, CA Conservation District",
+    description:
+      "Reach EKRCD by phone, email, or contact form. We assist growers with WELLUP water efficiency and Healthy Soils Program questions.",
+    url: "https://ekrcd.org/contact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact EKRCD - Hanford, CA",
+    description:
+      "Call (559) 309-4030 or email info@ekrcd.org - Excelsior-Kings River Resource Conservation District, 870 Greenfield Ave, Hanford CA.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: "https://ekrcd.org/contact",
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="hero-texture relative flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/80 to-primary/40" />
@@ -97,6 +134,47 @@ export default function ContactPage() {
                         Hanford, CA 93230
                       </p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Program Links */}
+                <div className="mt-8 pt-8 border-t border-gray-100">
+                  <h3 className="font-semibold text-foreground mb-4">
+                    Our Programs
+                  </h3>
+                  <div className="space-y-3">
+                    <Link
+                      href="/wellup"
+                      className="flex items-center gap-3 text-text-muted hover:text-secondary transition-colors group"
+                    >
+                      <div className="w-9 h-9 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-colors">
+                        <Droplets size={18} className="text-secondary" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm text-foreground">
+                          WELLUP Water Efficiency Program
+                        </p>
+                        <p className="text-xs">
+                          Free pump tests and irrigation assistance
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/hsp"
+                      className="flex items-center gap-3 text-text-muted hover:text-accent transition-colors group"
+                    >
+                      <div className="w-9 h-9 bg-accent/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                        <Sprout size={18} className="text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm text-foreground">
+                          Healthy Soils Program
+                        </p>
+                        <p className="text-xs">
+                          Grants up to $200,000 per farm project
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

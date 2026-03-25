@@ -19,12 +19,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Excelsior-Kings River Resource Conservation District | Water & Soil Conservation, Hanford CA",
+    default: "EKRCD | Water & Soil Conservation - Hanford, CA",
     template: "%s | EKRCD",
   },
   description:
-    "EKRCD supports groundwater sustainability and agricultural conservation across Fresno, Kings, and Tulare Counties. Programs include WELLUP water efficiency and Healthy Soils grant funding.",
+    "EKRCD provides free water efficiency and soil health programs to growers in Fresno, Kings, and Tulare Counties. CDFA-funded WELLUP and Healthy Soils grants available.",
   keywords: [
     "EKRCD",
     "Excelsior Kings River",
@@ -39,14 +38,16 @@ export const metadata: Metadata = {
     "Fresno County",
     "Kings County",
     "Tulare County",
+    "pump efficiency testing",
+    "cover crops",
+    "compost application",
   ],
   metadataBase: new URL("https://ekrcd.org"),
   alternates: { canonical: "/" },
   openGraph: {
-    title:
-      "Excelsior-Kings River Resource Conservation District | Water & Soil Conservation",
+    title: "EKRCD | Water & Soil Conservation - Hanford, CA",
     description:
-      "EKRCD supports groundwater sustainability and agricultural conservation across Fresno, Kings, and Tulare Counties.",
+      "Free CDFA-funded programs for growers: WELLUP pump efficiency testing and Healthy Soils grants up to $200,000 across Fresno, Kings, and Tulare Counties.",
     url: "https://ekrcd.org",
     siteName: "EKRCD",
     type: "website",
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EKRCD | Water & Soil Conservation, Hanford CA",
+    title: "EKRCD | Water & Soil Conservation - Hanford, CA",
     description:
-      "Supporting groundwater sustainability and agricultural conservation across Central California.",
+      "Free CDFA-funded water efficiency and soil health programs for growers across Fresno, Kings, and Tulare Counties.",
   },
   robots: { index: true, follow: true },
 };
@@ -84,6 +85,28 @@ const jsonLd = {
     { "@type": "AdministrativeArea", name: "Kings County, CA" },
     { "@type": "AdministrativeArea", name: "Tulare County, CA" },
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "EKRCD Conservation Programs",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "WELLUP Water Efficiency Technical Assistance",
+          url: "https://ekrcd.org/wellup",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Healthy Soils Program",
+          url: "https://ekrcd.org/hsp",
+        },
+      },
+    ],
+  },
 };
 
 export const viewport = {

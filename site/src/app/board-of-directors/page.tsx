@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Users, Vote, MapPin, UserCheck, Shield, Crown } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Board of Directors",
+  title: "Board of Directors - EKRCD Governance",
   description:
-    "Meet the Board of Directors of the Excelsior-Kings River Resource Conservation District. The Board serves as the legislative body governing water conservation, soil erosion prevention, and land improvement programs across Fresno, Kings, and Tulare Counties.",
+    "Meet the EKRCD Board of Directors governing water conservation and soil health programs across Fresno, Kings, and Tulare Counties. Five locally elected members.",
+  alternates: { canonical: "/board-of-directors" },
+  openGraph: {
+    title: "Board of Directors - EKRCD Governance",
+    description:
+      "Five locally elected board members govern EKRCD's water conservation and soil health programs across Fresno, Kings, and Tulare Counties.",
+    url: "https://ekrcd.org/board-of-directors",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "EKRCD Board of Directors",
+    description:
+      "Meet the five locally elected members governing EKRCD water conservation and soil health programs.",
+  },
 };
 
 const boardMembers = [
@@ -70,9 +85,32 @@ function getRoleBadge(role: string) {
   }
 }
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Board of Directors",
+      item: "https://ekrcd.org/board-of-directors",
+    },
+  ],
+};
+
 export default function BoardOfDirectorsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero Banner */}
       <section className="hero-texture relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
@@ -192,6 +230,31 @@ export default function BoardOfDirectorsPage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Related Links */}
+      <ScrollReveal>
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-text-muted text-sm">
+              View public{" "}
+              <Link
+                href="/agendas"
+                className="text-primary font-semibold hover:underline"
+              >
+                board meeting agendas
+              </Link>{" "}
+              going back to April 2024, or{" "}
+              <Link
+                href="/contact"
+                className="text-secondary font-semibold hover:underline"
+              >
+                contact the district
+              </Link>{" "}
+              with questions about governance or programs.
+            </p>
           </div>
         </section>
       </ScrollReveal>

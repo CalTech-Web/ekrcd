@@ -15,14 +15,22 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "WELLUP - Water Efficiency Program",
+  title: "WELLUP Water Efficiency Program - Free Pump Tests",
   description:
-    "EKRCD's WELLUP program provides free pump efficiency testing and on-farm technical assistance through a $500,000 CDFA Water Efficiency Technical Assistance grant serving Fresno, Kings, and Tulare Counties.",
+    "Free pump efficiency testing and on-farm irrigation assistance for growers in Fresno, Kings, and Tulare Counties. CDFA-funded WELLUP program through EKRCD.",
+  alternates: { canonical: "/wellup" },
   openGraph: {
-    title: "WELLUP - Water Efficiency Program | EKRCD",
+    title: "WELLUP Water Efficiency Program - Free Pump Tests | EKRCD",
     description:
-      "Free pump efficiency testing and irrigation technical assistance for growers in Fresno, Kings, and Tulare Counties.",
+      "Free pump efficiency testing and irrigation technical assistance for growers in Fresno, Kings, and Tulare Counties. No minimum acreage required.",
     url: "https://ekrcd.org/wellup",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WELLUP Water Efficiency Program - Free Pump Tests | EKRCD",
+    description:
+      "Free pump efficiency testing and irrigation assistance for Central Valley growers. CDFA-funded, no cost to participate.",
   },
 };
 
@@ -65,20 +73,77 @@ const timeline = [
 ];
 
 const galleryImages = [
-  { src: "/images/wellup-1.jpg", alt: "WELLUP program - irrigation system" },
-  { src: "/images/wellup-2.jpg", alt: "WELLUP program - pump efficiency testing" },
-  { src: "/images/wellup-3.jpg", alt: "WELLUP program - on-farm assistance" },
+  {
+    src: "/images/wellup-1.jpg",
+    alt: "WELLUP program - agricultural irrigation system evaluation in Central Valley",
+  },
+  {
+    src: "/images/wellup-2.jpg",
+    alt: "WELLUP program - pump efficiency testing for groundwater conservation",
+  },
+  {
+    src: "/images/wellup-3.jpg",
+    alt: "WELLUP program - on-farm technical assistance for water efficiency",
+  },
 ];
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://ekrcd.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "WELLUP Program",
+      item: "https://ekrcd.org/wellup",
+    },
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  name: "WELLUP Water Efficiency Technical Assistance Program",
+  alternateName: "WELLUP",
+  description:
+    "Free pump efficiency testing and on-farm irrigation technical assistance for growers in Fresno, Kings, and Tulare Counties. Funded by CDFA through a $500,000 Water Efficiency Technical Assistance grant.",
+  provider: {
+    "@type": "GovernmentOrganization",
+    name: "Excelsior-Kings River Resource Conservation District",
+    alternateName: "EKRCD",
+    url: "https://ekrcd.org",
+  },
+  serviceType: "Agricultural Water Efficiency",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Fresno County, CA" },
+    { "@type": "AdministrativeArea", name: "Kings County, CA" },
+    { "@type": "AdministrativeArea", name: "Tulare County, CA" },
+  ],
+  isAccessibleForFree: true,
+  url: "https://ekrcd.org/wellup",
+};
 
 export default function WellupPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([breadcrumbJsonLd, serviceJsonLd]),
+        }}
+      />
       {/* Hero */}
       <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-secondary-dark via-secondary to-secondary-light overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/wellup-1.jpg"
-            alt="WELLUP Program - Water efficiency"
+            alt="Agricultural irrigation equipment - WELLUP water efficiency program in Central Valley"
             fill
             className="object-cover opacity-20"
             priority
@@ -311,7 +376,14 @@ export default function WellupPage() {
               </h2>
               <p className="text-text-muted mb-8">
                 Not sure if your farm qualifies or want to know what to expect
-                from a pump test? Call or email us.
+                from a pump test?{" "}
+                <Link
+                  href="/contact"
+                  className="text-secondary font-semibold hover:underline"
+                >
+                  Visit our contact page
+                </Link>{" "}
+                or reach us directly by phone or email.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a
@@ -329,6 +401,16 @@ export default function WellupPage() {
                   (559) 309-4030
                 </a>
               </div>
+              <p className="mt-8 text-sm text-text-muted">
+                Also interested in soil health funding? Learn about the{" "}
+                <Link
+                  href="/hsp"
+                  className="text-accent font-semibold hover:underline"
+                >
+                  Healthy Soils Program
+                </Link>
+                , which provides grants up to $200,000 per farm.
+              </p>
             </div>
           </div>
         </section>
