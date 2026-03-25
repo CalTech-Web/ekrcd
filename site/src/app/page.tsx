@@ -15,9 +15,10 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+      <section className="hero-texture relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/soil.jpg')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/60" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
@@ -87,7 +88,7 @@ export default function HomePage() {
               <Link
                 href="/files/agendas/Meeting-Cancellation-Notice.pdf"
                 target="_blank"
-                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+                className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
               >
                 <FileText
                   size={40}
@@ -103,7 +104,7 @@ export default function HomePage() {
 
               <Link
                 href="/agendas"
-                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+                className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
               >
                 <Archive
                   size={40}
@@ -119,7 +120,7 @@ export default function HomePage() {
 
               <Link
                 href="/contact"
-                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+                className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
               >
                 <Phone
                   size={40}
@@ -154,7 +155,7 @@ export default function HomePage() {
               {/* WELLUP Card */}
               <Link
                 href="/wellup"
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all border border-gray-100"
+                className="group card-hover relative overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100"
               >
                 <div className="aspect-[16/9] relative">
                   <Image
@@ -189,7 +190,7 @@ export default function HomePage() {
               {/* HSP Card */}
               <Link
                 href="/hsp"
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all border border-gray-100"
+                className="group card-hover relative overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100"
               >
                 <div className="aspect-[16/9] relative">
                   <Image

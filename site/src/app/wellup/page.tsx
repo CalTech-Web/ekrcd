@@ -74,7 +74,7 @@ export default function WellupPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-secondary-dark via-secondary to-secondary-light overflow-hidden">
+      <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-secondary-dark via-secondary to-secondary-light overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/wellup-1.jpg"
@@ -85,6 +85,7 @@ export default function WellupPage() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-dark/90 to-secondary/60" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
@@ -144,7 +145,7 @@ export default function WellupPage() {
                 return (
                   <div
                     key={obj.number}
-                    className="relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                    className="card-hover relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
                   >
                     <div className="flex items-center gap-4 mb-5">
                       <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">

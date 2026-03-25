@@ -210,8 +210,9 @@ export default function AgendasPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+      <section className="hero-texture relative bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
@@ -258,7 +259,7 @@ export default function AgendasPage() {
                     return (
                       <div
                         key={`${meeting.date}-${meeting.file}`}
-                        className="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                        className="card-hover bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-gray-100"
                       >
                         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                           {/* Date */}

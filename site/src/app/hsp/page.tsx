@@ -105,7 +105,7 @@ export default function HspPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-primary-dark via-accent to-accent-light overflow-hidden">
+      <section className="hero-texture relative min-h-[60vh] flex items-center bg-gradient-to-br from-primary-dark via-accent to-accent-light overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/soil.jpg"
@@ -116,6 +116,7 @@ export default function HspPage() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-accent/60" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
@@ -202,7 +203,7 @@ export default function HspPage() {
                 return (
                   <div
                     key={i}
-                    className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow"
+                    className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center"
                   >
                     <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                       <Icon size={28} className="text-accent" />
@@ -337,7 +338,7 @@ export default function HspPage() {
                   key={i}
                   href={`/files/hsp/${resource.filename}`}
                   target="_blank"
-                  className="group flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-accent/20 transition-all"
+                  className="group card-hover flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-accent/20 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
                     <FileText size={20} className="text-accent" />

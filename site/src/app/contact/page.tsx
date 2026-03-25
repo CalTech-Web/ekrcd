@@ -14,8 +14,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+      <section className="hero-texture relative flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/80 to-primary/40" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
             Contact Us

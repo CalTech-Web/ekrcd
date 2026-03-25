@@ -36,8 +36,9 @@ export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-center bg-gradient-to-br from-earth via-sand-dark to-sand overflow-hidden">
+      <section className="hero-texture relative flex items-center bg-gradient-to-br from-earth via-sand-dark to-sand overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-earth/80 to-sand-dark/40" />
+        <div className="hero-dots absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
             Resource Partners
@@ -77,7 +78,7 @@ export default function ResourcesPage() {
               {partners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+                  className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
                 >
                   <h3 className="text-lg font-semibold text-foreground mb-4 font-[family-name:var(--font-heading)]">
                     {partner.name}
