@@ -7,3 +7,4 @@ site/build
 site-mirror/
 *.log
 .env*
+.vercel
