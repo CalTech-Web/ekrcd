@@ -27,13 +27,13 @@ const requirements = [
     icon: MapPin,
     title: "District Resident",
     description:
-      "Reside within the District and either own real property in the District or alternatively have served, pursuant to the district's rules, for two years or more as an Associate Director providing advisory or other assistance to the Board of Directors.",
+      "Must reside within the District and either own real property here or have served as an Associate Director for two or more years under the district's rules.",
   },
   {
     icon: UserCheck,
     title: "Designated Agent",
     description:
-      "Be a designated Agent of a resident landowner within the District.",
+      "May serve as a formally designated agent of a resident landowner within the District.",
   },
 ];
 
@@ -91,8 +91,8 @@ export default function BoardOfDirectorsPage() {
               Board of Directors
             </h1>
             <p className="mt-4 text-lg text-white/85 leading-relaxed max-w-2xl">
-              The governing body of the Excelsior-Kings River Resource
-              Conservation District.
+              Five local members who set district policy, oversee programs, and
+              keep EKRCD accountable to the growers and communities it serves.
             </p>
           </div>
         </div>
@@ -108,12 +108,12 @@ export default function BoardOfDirectorsPage() {
                   Purpose of the Board
                 </h2>
                 <p className="text-text-muted leading-relaxed text-base sm:text-lg">
-                  The function of the Board is to act as the legislative body
-                  for the Excelsior/Kings River Resource Conservation District,
-                  which has been formed for the control of runoff, the
-                  prevention or control of soil erosion, the development and
-                  distribution of water, and the improvement of land
-                  capabilities in the District.
+                  The Board acts as the legislative body for EKRCD, a district
+                  formed to control runoff, prevent soil erosion, develop and
+                  distribute water, and improve land capabilities across its
+                  service area. Board members are elected or appointed from
+                  within the district and bring direct knowledge of the land and
+                  operations they represent.
                 </p>
               </div>
             </div>
@@ -130,8 +130,8 @@ export default function BoardOfDirectorsPage() {
                 Membership Composition
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Board members must meet at least one of the following
-                requirements to serve on the Board of Directors.
+                To serve on the EKRCD board, a person must satisfy at least one
+                of the following criteria.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -165,8 +165,7 @@ export default function BoardOfDirectorsPage() {
                 Current Board Members
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                The individuals who serve the District and its mission of
-                conservation and sustainability.
+                The five members currently serving EKRCD.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">

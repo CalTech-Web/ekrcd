@@ -34,9 +34,10 @@ export default function HomePage() {
               Excelsior-Kings River Resource Conservation District
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
-              Improving ground and surface water conservation methods and
-              helping Groundwater Sustainability Agencies achieve sustainability
-              goals across Fresno, Kings, and Tulare Counties.
+              A locally governed conservation district working with farmers,
+              ranchers, and Groundwater Sustainability Agencies across Fresno,
+              Kings, and Tulare Counties to put water in the ground and keep
+              soil productive for the long run.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -80,8 +81,8 @@ export default function HomePage() {
                 Transparency
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Public access to board meeting agendas, records, and district
-                communications.
+                All board meeting agendas and packets are posted publicly.
+                Meeting records go back to 2024.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -98,7 +99,7 @@ export default function HomePage() {
                   Latest Agenda
                 </h3>
                 <p className="text-text-muted text-sm">
-                  March 18, 2026 - Meeting Cancellation Notice
+                  March 18, 2026 meeting cancellation notice
                 </p>
               </Link>
 
@@ -114,7 +115,7 @@ export default function HomePage() {
                   Agendas Archive
                 </h3>
                 <p className="text-text-muted text-sm">
-                  Full archive of board meeting agendas and packets.
+                  Every agenda and board packet since April 2024.
                 </p>
               </Link>
 
@@ -130,7 +131,7 @@ export default function HomePage() {
                   Contact Us
                 </h3>
                 <p className="text-text-muted text-sm">
-                  Reach out with questions about the district or its programs.
+                  Questions about programs or how to get involved? We are here.
                 </p>
               </Link>
             </div>
@@ -147,8 +148,8 @@ export default function HomePage() {
                 Our Programs
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Grant-funded programs supporting water efficiency and soil
-                health for growers in the Central Valley.
+                Two active CDFA-funded programs open to growers across the
+                three-county region. Both are free to participate in.
               </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -180,9 +181,9 @@ export default function HomePage() {
                     />
                   </h3>
                   <p className="text-text-muted text-sm">
-                    $500,000 CDFA-funded program providing free pump efficiency
-                    testing and technical assistance for irrigation system
-                    evaluations.
+                    Funded at $500,000 through CDFA. Free pump tests, irrigation
+                    system evaluations, and one-on-one technical assistance for
+                    growers of any acreage.
                   </p>
                 </div>
               </Link>
@@ -215,8 +216,9 @@ export default function HomePage() {
                     />
                   </h3>
                   <p className="text-text-muted text-sm">
-                    $5 million CDFA grant funding on-farm soil health projects
-                    up to $200,000 per project across three counties.
+                    $5 million CDFA grant supporting on-farm projects up to
+                    $200,000 each. Round 1 funded 20 farms and awarded $2.6
+                    million. Round 2 is now closed.
                   </p>
                 </div>
               </Link>

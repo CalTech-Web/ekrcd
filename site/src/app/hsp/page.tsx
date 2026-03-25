@@ -127,9 +127,9 @@ export default function HspPage() {
               Healthy Soils Program
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
-              Funding on-farm soil health projects to reduce greenhouse gas
-              emissions, sequester carbon, and improve soil health across the
-              Central Valley.
+              $5 million from CDFA to fund compost, cover crops, mulching, and
+              other soil health practices on working farms across Fresno, Kings,
+              and Tulare Counties. Projects pay up to $200,000 per farm.
             </p>
           </div>
         </div>
@@ -162,23 +162,27 @@ export default function HspPage() {
                 <span className="font-semibold text-foreground">
                   $5 million
                 </span>{" "}
-                from the California Department of Food and Agriculture (CDFA) as
-                part of the Healthy Soils Program. EKRCD is one of{" "}
+                from the California Department of Food and Agriculture through
+                the Healthy Soils Program. EKRCD is one of{" "}
                 <span className="font-semibold text-foreground">
                   14 funded groups
                 </span>{" "}
-                serving portions of Fresno, Kings, and Tulare Counties.
+                statewide and is the administering entity for growers in
+                portions of Fresno, Kings, and Tulare Counties.
               </p>
               <p className="text-lg text-text-muted leading-relaxed mb-4">
-                The program funds on-farm projects up to{" "}
+                Approved farms receive direct payments up to{" "}
                 <span className="font-semibold text-foreground">
                   $200,000 per project
-                </span>
-                . Practices include reducing greenhouse gas emissions,
-                sequestering carbon, and improving soil health.
+                </span>{" "}
+                to implement practices that build soil organic matter, reduce
+                greenhouse gas emissions, and sequester carbon. Compost
+                application, cover crops, mulching, residue management, and
+                reduced tillage all qualify.
               </p>
               <p className="text-lg text-text-muted leading-relaxed">
-                The program runs from early 2025 through summer 2028.
+                The program runs through summer 2028. Round 1 is complete and
+                Round 2 applications are now closed.
               </p>
             </div>
           </div>
@@ -194,7 +198,8 @@ export default function HspPage() {
                 Round 1 Results
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                First round outcomes from the Healthy Soils Program.
+                78 applications came in. EKRCD selected 20 projects and awarded
+                $2.6 million to farms across the three-county region.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
@@ -328,8 +333,8 @@ export default function HspPage() {
                 Technical Resources
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Download program documents, application forms, and reference
-                materials.
+                Official program documents, eligibility guides, and the Round 2
+                application and request for grant applications.
               </p>
             </div>
             <div className="max-w-3xl mx-auto space-y-4">
@@ -399,8 +404,8 @@ export default function HspPage() {
                 Get in Touch
               </h2>
               <p className="text-text-muted mb-8">
-                Have questions about the Healthy Soils Program? Reach out to our
-                team.
+                Questions about whether your farm qualifies or what to expect
+                from the process? Call or email our team.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a

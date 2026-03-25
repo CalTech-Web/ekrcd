@@ -22,8 +22,9 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-4 text-lg text-white/90 max-w-2xl leading-relaxed">
-            Have questions about EKRCD programs or district operations? We would
-            love to hear from you.
+            Growers, landowners, and community members are all welcome to reach
+            out. Whether it is a question about WELLUP, the Healthy Soils
+            Program, or district business in general, our team is glad to help.
           </p>
         </div>
       </section>
@@ -39,8 +40,9 @@ export default function ContactPage() {
                   Get in Touch
                 </h2>
                 <p className="text-text-muted leading-relaxed mb-8">
-                  Reach out with questions about the district, our programs, or
-                  how we can support conservation efforts in your community.
+                  Our office is in Hanford, CA. You can call, send an email, or
+                  use the form on this page. We respond to all inquiries as
+                  quickly as we can.
                 </p>
 
                 <div className="space-y-6">

@@ -31,21 +31,21 @@ const objectives = [
     number: 1,
     title: "On-Farm Technical Assistance",
     description:
-      "Deliver one-on-one on-farm technical assistance for irrigation system efficiency evaluations, diagnostics, reports, and recommendations.",
+      "A trained specialist visits your operation to evaluate the irrigation system, identify inefficiencies, and put a written report with concrete recommendations in your hands.",
     icon: Target,
   },
   {
     number: 2,
     title: "Pump Efficiency Testing",
     description:
-      "Coordinate or provide pump efficiency testing services.",
+      "Field testing of your irrigation pumps to measure actual performance against rated output. Results show you exactly where energy and water are being lost.",
     icon: Gauge,
   },
   {
     number: 3,
     title: "Training and Education",
     description:
-      "Offer training on water use efficiency, nutrient management practices, and technology.",
+      "Workshops and resources covering water use efficiency, nutrient management, and the latest irrigation technology available to growers in the region.",
     icon: GraduationCap,
   },
 ];
@@ -96,8 +96,9 @@ export default function WellupPage() {
               WELLUP Program
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
-              Free pump efficiency testing and on-farm technical assistance for
-              growers in the Central Valley.
+              A $500,000 CDFA program bringing free pump tests and hands-on
+              irrigation help to farms of every size across Fresno, Kings, and
+              Tulare Counties.
             </p>
           </div>
         </div>
@@ -112,15 +113,17 @@ export default function WellupPage() {
                 Program Overview
               </h2>
               <p className="text-lg text-text-muted leading-relaxed">
-                EKRCD was awarded{" "}
+                EKRCD received{" "}
                 <span className="font-semibold text-foreground">$500,000</span>{" "}
-                from the California Department of Food and Agriculture (CDFA) as
-                part of their Water Efficiency Technical Assistance Program
-                (WETA). The program serves growers in portions of{" "}
+                from the California Department of Food and Agriculture (CDFA)
+                through the Water Efficiency Technical Assistance Program. The
+                grant runs from spring 2024 through spring 2026 and covers
+                growers in portions of{" "}
                 <span className="font-semibold text-foreground">
                   Fresno, Kings, and Tulare Counties
                 </span>
-                .
+                . There is no cost to participate and no minimum acreage
+                requirement.
               </p>
             </div>
           </div>
@@ -136,7 +139,7 @@ export default function WellupPage() {
                 Program Objectives
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Three core objectives guiding our water efficiency efforts.
+                Every service in the program ties back to one of three goals.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -178,7 +181,8 @@ export default function WellupPage() {
                 Program Benefits
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                Services available to eligible growers at no cost.
+                All services are free. Here is what growers can access through
+                the program.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -246,14 +250,15 @@ export default function WellupPage() {
                 Eligibility
               </h2>
               <p className="text-lg text-text-muted leading-relaxed mb-8">
-                To participate, submit a completed WELLUP intake form to{" "}
+                Download the intake form, fill it out, and send it to{" "}
                 <a
                   href="mailto:info@ekrcd.org"
                   className="text-secondary font-semibold hover:underline"
                 >
                   info@ekrcd.org
                 </a>
-                .
+                . Once received, our team will follow up to schedule your first
+                pump test.
               </p>
               <Link
                 href="/files/wellup/WellUp_Intake-Form-10.06.pdf"
@@ -305,7 +310,8 @@ export default function WellupPage() {
                 Get in Touch
               </h2>
               <p className="text-text-muted mb-8">
-                Have questions about the WELLUP program? Reach out to our team.
+                Not sure if your farm qualifies or want to know what to expect
+                from a pump test? Call or email us.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a

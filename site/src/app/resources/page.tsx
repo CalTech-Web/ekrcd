@@ -12,21 +12,29 @@ export const metadata: Metadata = {
 const partners = [
   {
     name: "California Association of Resource Conservation Districts (CARCD)",
+    description:
+      "The statewide association representing all 95 resource conservation districts in California. CARCD supports RCDs through advocacy, technical training, and grant program coordination.",
     url: "https://carcd.org/",
     phones: [],
   },
   {
     name: "Kings River Conservation District (KRCD)",
+    description:
+      "A regional water agency managing Kings River water supplies and groundwater resources across Fresno and Kings Counties. KRCD and EKRCD share overlapping service areas and coordinate on groundwater sustainability work.",
     url: "https://krcd.org/",
     phones: [],
   },
   {
     name: "Kings County Farm Bureau (KCFB)",
+    description:
+      "The voice of agriculture in Kings County since 1917. The Farm Bureau represents growers of all sizes and crops and hosts educational events, including EKRCD HSP training sessions at their Hanford office.",
     url: "http://kcfb.org/",
     phones: ["(559) 584-3557"],
   },
   {
     name: "Natural Resources Conservation Service (NRCS)",
+    description:
+      "The federal agency providing technical and financial assistance to private landowners for conservation practices. NRCS field offices in Fresno and Kings Counties work alongside EKRCD on soil health, irrigation, and water quality projects.",
     url: "https://www.nacdnet.org/",
     phones: ["559-585-8732", "559-772-3651"],
   },
@@ -44,8 +52,8 @@ export default function ResourcesPage() {
             Resource Partners
           </h1>
           <p className="mt-4 text-lg text-white/90 max-w-2xl leading-relaxed">
-            Organizations we work alongside to advance conservation, water
-            sustainability, and agricultural stewardship in the Central Valley.
+            The agencies and organizations EKRCD collaborates with on
+            groundwater, soil, and land conservation work across the region.
           </p>
         </div>
       </section>
@@ -59,11 +67,11 @@ export default function ResourcesPage() {
                 Our Partners
               </h2>
               <p className="mt-4 text-text-muted leading-relaxed">
-                EKRCD collaborates with federal, state, and local organizations
-                dedicated to natural resource conservation. These partners
-                provide technical expertise, funding opportunities, and
-                educational resources that strengthen our shared mission of
-                protecting land, water, and soil across the region.
+                EKRCD does not work in isolation. Federal, state, and local
+                agencies each bring different resources and reach to conservation
+                work. The organizations listed here are active partners in the
+                programs and services EKRCD delivers across Fresno, Kings, and
+                Tulare Counties.
               </p>
             </div>
           </div>
@@ -80,9 +88,13 @@ export default function ResourcesPage() {
                   key={partner.name}
                   className="group card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
                 >
-                  <h3 className="text-lg font-semibold text-foreground mb-4 font-[family-name:var(--font-heading)]">
+                  <h3 className="text-lg font-semibold text-foreground mb-3 font-[family-name:var(--font-heading)]">
                     {partner.name}
                   </h3>
+
+                  <p className="text-text-muted text-sm leading-relaxed mb-4">
+                    {partner.description}
+                  </p>
 
                   <div className="space-y-3">
                     <a
