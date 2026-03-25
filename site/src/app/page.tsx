@@ -1,0 +1,228 @@
+import Link from "next/link";
+import Image from "next/image";
+import {
+  FileText,
+  Archive,
+  Phone,
+  Droplets,
+  Sprout,
+  ArrowRight,
+  AlertTriangle,
+} from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/soil.jpg')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/60" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-6">
+              <Image
+                src="/images/logo.jpg"
+                alt="EKRCD Logo"
+                width={64}
+                height={64}
+                className="rounded-full border-2 border-white/30"
+              />
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
+              Excelsior-Kings River Resource Conservation District
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
+              Improving ground and surface water conservation methods and
+              helping Groundwater Sustainability Agencies achieve sustainability
+              goals across Fresno, Kings, and Tulare Counties.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/wellup"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-xl hover:bg-white/90 transition-all shadow-lg"
+              >
+                <Droplets size={18} />
+                WELLUP Program
+              </Link>
+              <Link
+                href="/hsp"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-all shadow-lg"
+              >
+                <Sprout size={18} />
+                Healthy Soils Program
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meeting Notice */}
+      <section className="bg-amber-50 border-b border-amber-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center gap-3 text-amber-800">
+            <AlertTriangle size={20} className="shrink-0" />
+            <p className="text-sm sm:text-base">
+              <span className="font-semibold">Notice:</span> The EKRCD regular
+              meeting set for Wednesday, March 18, 2026 has been canceled.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Transparency Section */}
+      <ScrollReveal>
+        <section className="py-20 bg-sand">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                Transparency
+              </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                Public access to board meeting agendas, records, and district
+                communications.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link
+                href="/files/agendas/Meeting-Cancellation-Notice.pdf"
+                target="_blank"
+                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+              >
+                <FileText
+                  size={40}
+                  className="text-secondary mb-4 group-hover:scale-110 transition-transform"
+                />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Latest Agenda
+                </h3>
+                <p className="text-text-muted text-sm">
+                  March 18, 2026 - Meeting Cancellation Notice
+                </p>
+              </Link>
+
+              <Link
+                href="/agendas"
+                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+              >
+                <Archive
+                  size={40}
+                  className="text-accent mb-4 group-hover:scale-110 transition-transform"
+                />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Agendas Archive
+                </h3>
+                <p className="text-text-muted text-sm">
+                  Full archive of board meeting agendas and packets.
+                </p>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all border border-gray-100"
+              >
+                <Phone
+                  size={40}
+                  className="text-primary mb-4 group-hover:scale-110 transition-transform"
+                />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Contact Us
+                </h3>
+                <p className="text-text-muted text-sm">
+                  Reach out with questions about the district or its programs.
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Programs Section */}
+      <ScrollReveal>
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                Our Programs
+              </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                Grant-funded programs supporting water efficiency and soil
+                health for growers in the Central Valley.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* WELLUP Card */}
+              <Link
+                href="/wellup"
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all border border-gray-100"
+              >
+                <div className="aspect-[16/9] relative">
+                  <Image
+                    src="/images/wellup-1.jpg"
+                    alt="WELLUP Program - Irrigation and pump efficiency"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      WELLUP
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+                    Water Efficiency Program
+                    <ArrowRight
+                      size={18}
+                      className="text-secondary group-hover:translate-x-1 transition-transform"
+                    />
+                  </h3>
+                  <p className="text-text-muted text-sm">
+                    $500,000 CDFA-funded program providing free pump efficiency
+                    testing and technical assistance for irrigation system
+                    evaluations.
+                  </p>
+                </div>
+              </Link>
+
+              {/* HSP Card */}
+              <Link
+                href="/hsp"
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all border border-gray-100"
+              >
+                <div className="aspect-[16/9] relative">
+                  <Image
+                    src="/images/compost.jpg"
+                    alt="Healthy Soils Program - Compost application"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      HSP
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+                    Healthy Soils Program
+                    <ArrowRight
+                      size={18}
+                      className="text-accent group-hover:translate-x-1 transition-transform"
+                    />
+                  </h3>
+                  <p className="text-text-muted text-sm">
+                    $5 million CDFA grant funding on-farm soil health projects
+                    up to $200,000 per project across three counties.
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+    </>
+  );
+}
