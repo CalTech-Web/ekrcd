@@ -180,6 +180,8 @@ export default function HspPage() {
             fill
             className="object-cover opacity-20"
             priority
+            sizes="100vw"
+            quality={75}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-accent/60" />
@@ -454,6 +456,8 @@ export default function HspPage() {
                     alt={img.alt}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={75}
                   />
                 </div>
               ))}

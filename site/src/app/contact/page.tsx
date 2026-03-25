@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Droplets, Sprout } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
+
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  loading: () => (
+    <div className="space-y-5 animate-pulse">
+      <div className="h-12 bg-gray-100 rounded-xl" />
+      <div className="h-12 bg-gray-100 rounded-xl" />
+      <div className="h-32 bg-gray-100 rounded-xl" />
+      <div className="h-12 bg-gray-100 rounded-xl" />
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: "Contact EKRCD - Hanford, CA Conservation District",

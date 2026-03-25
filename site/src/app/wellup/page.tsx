@@ -147,6 +147,8 @@ export default function WellupPage() {
             fill
             className="object-cover opacity-20"
             priority
+            sizes="100vw"
+            quality={75}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-dark/90 to-secondary/60" />
@@ -358,6 +360,8 @@ export default function WellupPage() {
                     alt={img.alt}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    quality={75}
                   />
                 </div>
               ))}

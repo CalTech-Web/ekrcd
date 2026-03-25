@@ -30,6 +30,7 @@ export default function HomePage() {
                 width={64}
                 height={64}
                 className="rounded-full border-2 border-white/30"
+                priority
               />
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
@@ -166,6 +167,8 @@ export default function HomePage() {
                     alt="WELLUP program - free pump efficiency testing and irrigation assistance for Central Valley growers"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={75}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
@@ -201,6 +204,8 @@ export default function HomePage() {
                     alt="Healthy Soils Program - compost application funded by CDFA grant on California farm"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={75}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
