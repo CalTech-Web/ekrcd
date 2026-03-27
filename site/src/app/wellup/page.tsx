@@ -152,6 +152,7 @@ export default function WellupPage() {
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">

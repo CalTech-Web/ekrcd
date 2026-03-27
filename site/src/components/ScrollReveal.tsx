@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 export default function ScrollReveal({
   children,
@@ -10,7 +10,6 @@ export default function ScrollReveal({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -18,7 +17,7 @@ export default function ScrollReveal({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          el.classList.add("sr-visible");
           observer.unobserve(el);
         }
       },
@@ -29,14 +28,7 @@ export default function ScrollReveal({
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6"
-      } ${className}`}
-    >
+    <div ref={ref} className={`sr-reveal ${className}`}>
       {children}
     </div>
   );

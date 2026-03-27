@@ -255,6 +255,7 @@ export default function AgendasPage() {
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
@@ -360,7 +361,7 @@ export default function AgendasPage() {
                       className="group flex items-center gap-4 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
                     >
                       <div className={`w-2 h-8 rounded-full ${meeting.status === "Canceled" ? "bg-red-300" : meeting.status === "Rescheduled" ? "bg-amber-300" : "bg-primary/60"}`} />
-                      <span className="font-semibold text-foreground min-w-[130px]">
+                      <span className="font-semibold text-foreground min-w-[110px] sm:min-w-[130px]">
                         {meeting.date}
                       </span>
                       <span

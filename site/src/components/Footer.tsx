@@ -21,6 +21,7 @@ export default function Footer() {
           src="/images/icon.webp"
           alt=""
           fill
+          sizes="256px"
           className="object-contain"
           aria-hidden="true"
         />
@@ -35,6 +36,7 @@ export default function Footer() {
               alt="EKRCD Logo"
               width={180}
               height={42}
+              sizes="180px"
               className="brightness-0 invert mb-4"
             />
             <p className="text-white/80 text-sm leading-relaxed">
@@ -54,7 +56,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white text-sm transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors inline-block py-1"
                   >
                     {link.label}
                   </Link>

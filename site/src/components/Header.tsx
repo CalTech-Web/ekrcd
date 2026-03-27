@@ -71,6 +71,7 @@ export default function Header() {
               alt="EKRCD Logo"
               width={206}
               height={48}
+              sizes="206px"
               className={`h-10 sm:h-12 w-auto transition-all duration-300 ${
                 scrolled ? "" : "brightness-0 invert"
               }`}
@@ -89,6 +90,8 @@ export default function Header() {
                 >
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
+                    aria-expanded={dropdownOpen}
+                    aria-haspopup="true"
                     className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       scrolled
                         ? pathname === "/board-of-directors" ||
@@ -174,7 +177,7 @@ export default function Header() {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className={`block px-6 py-2.5 rounded-lg text-sm transition-colors ${
+                      className={`block px-6 py-3 rounded-lg text-sm transition-colors ${
                         pathname === child.href
                           ? "text-primary bg-primary/5 font-medium"
                           : "text-gray-700 hover:text-primary hover:bg-primary/5"
@@ -188,7 +191,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-4 py-2.5 rounded-lg text-sm transition-colors ${
+                  className={`block px-4 py-3 rounded-lg text-sm transition-colors ${
                     pathname === item.href
                       ? "text-primary bg-primary/5 font-medium"
                       : "text-gray-700 hover:text-primary hover:bg-primary/5"

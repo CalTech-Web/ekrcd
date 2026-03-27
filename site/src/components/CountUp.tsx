@@ -15,8 +15,8 @@ export default function CountUp({
   suffix = "",
   duration = 2000,
 }: CountUpProps) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
+  const [count, setCount] = useState(end);
+  const [animated, setAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -25,8 +25,25 @@ export default function CountUp({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
+        if (entry.isIntersecting && !animated) {
+          setAnimated(true);
+          observer.unobserve(el);
+
+          const steps = 60;
+          const stepDuration = duration / steps;
+          let step = 0;
+
+          const timer = setInterval(() => {
+            step++;
+            const progress = step / steps;
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.round(eased * end));
+
+            if (step >= steps) {
+              setCount(end);
+              clearInterval(timer);
+            }
+          }, stepDuration);
         }
       },
       { threshold: 0.3 },
@@ -34,33 +51,7 @@ export default function CountUp({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
-
-    const steps = 60;
-    const increment = end / steps;
-    const stepDuration = duration / steps;
-    let current = 0;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      // Ease-out: fast start, slow end
-      const progress = step / steps;
-      const eased = 1 - Math.pow(1 - progress, 3);
-      current = Math.round(eased * end);
-      setCount(current);
-
-      if (step >= steps) {
-        setCount(end);
-        clearInterval(timer);
-      }
-    }, stepDuration);
-
-    return () => clearInterval(timer);
-  }, [started, end, duration]);
+  }, [animated, end, duration]);
 
   return (
     <span ref={ref}>

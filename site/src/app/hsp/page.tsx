@@ -185,6 +185,7 @@ export default function HspPage() {
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
@@ -347,7 +348,7 @@ export default function HspPage() {
                   Funded Practices
                 </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 {[
                   { practice: "Compost application", icon: Layers },
                   { practice: "Cover crops", icon: Wheat },

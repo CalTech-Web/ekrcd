@@ -120,6 +120,7 @@ export default function BoardOfDirectorsPage() {
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
@@ -161,7 +162,7 @@ export default function BoardOfDirectorsPage() {
                   operations they represent.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                   <p className="text-3xl font-bold text-primary font-[family-name:var(--font-heading)]">5</p>
                   <p className="text-sm text-text-muted mt-1">Board Members</p>
@@ -170,7 +171,7 @@ export default function BoardOfDirectorsPage() {
                   <p className="text-3xl font-bold text-secondary font-[family-name:var(--font-heading)]">3</p>
                   <p className="text-sm text-text-muted mt-1">Counties Served</p>
                 </div>
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center col-span-2">
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center sm:col-span-2">
                   <p className="text-lg font-bold text-accent font-[family-name:var(--font-heading)]">Locally Elected</p>
                   <p className="text-sm text-text-muted mt-1">Members come from within the district they serve</p>
                 </div>

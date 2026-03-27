@@ -147,6 +147,7 @@ export default function ResourcesPage() {
           fill
           className="object-cover object-center"
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
@@ -187,7 +188,7 @@ export default function ResourcesPage() {
                   Tulare Counties.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                   <p className="text-3xl font-bold text-primary font-[family-name:var(--font-heading)]">
                     4
