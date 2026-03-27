@@ -423,6 +423,7 @@ export default function WellupPage() {
               <Link
                 href="/files/wellup/WellUp_Intake-Form-10.06.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-secondary-light transition-all shadow-lg shadow-secondary/20"
               >
                 <Download size={20} />

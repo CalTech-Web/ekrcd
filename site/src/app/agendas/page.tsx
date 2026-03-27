@@ -298,6 +298,7 @@ export default function AgendasPage() {
                     key={`${meeting.date}-${meeting.file}`}
                     href={`/files/agendas/${meeting.file}`}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="group card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col"
                   >
                     <div className={`px-6 py-4 ${config.bg} border-b ${config.border}`}>
@@ -358,6 +359,7 @@ export default function AgendasPage() {
                       key={`${meeting.date}-${meeting.file}`}
                       href={`/files/agendas/${meeting.file}`}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="group flex items-center gap-4 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
                     >
                       <div className={`w-2 h-8 rounded-full ${meeting.status === "Canceled" ? "bg-red-300" : meeting.status === "Rescheduled" ? "bg-amber-300" : "bg-primary/60"}`} />

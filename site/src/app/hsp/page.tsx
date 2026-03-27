@@ -482,6 +482,7 @@ export default function HspPage() {
                   key={i}
                   href={`/files/hsp/${resource.filename}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="group card-hover flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-accent/20 transition-colors"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">

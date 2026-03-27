@@ -46,7 +46,7 @@ const partners = [
     description:
       "The federal agency providing technical and financial assistance to private landowners for conservation practices. NRCS field offices in Fresno and Kings Counties work alongside EKRCD on soil health, irrigation, and water quality projects.",
     highlight: "Technical assistance and cost-share programs for growers",
-    url: "https://www.nacdnet.org/",
+    url: "https://www.nrcs.usda.gov/",
     phones: ["559-585-8732", "559-772-3651"],
     icon: Shield,
     color: "primary" as const,
@@ -82,7 +82,7 @@ const partners = [
     description:
       "The voice of agriculture in Kings County since 1917. The Farm Bureau represents growers of all sizes and crops and hosts educational events, including EKRCD HSP training sessions at their Hanford office.",
     highlight: "Grower representation and educational event hosting since 1917",
-    url: "http://kcfb.org/",
+    url: "https://kcfb.org/",
     phones: ["(559) 584-3557"],
     icon: Wheat,
     color: "primary" as const,

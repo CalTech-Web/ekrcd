@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/wp-admin/", "/wp-content/themes/", "/wp-includes/"],
       },
     ],
     sitemap: "https://ekrcd.org/sitemap.xml",

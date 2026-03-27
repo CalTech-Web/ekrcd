@@ -106,6 +106,7 @@ export default function HomePage() {
               <Link
                 href="/files/agendas/Meeting-Cancellation-Notice.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 card-hover overflow-hidden"
               >
                 <div className="bg-secondary/10 p-6 flex items-center gap-4">
