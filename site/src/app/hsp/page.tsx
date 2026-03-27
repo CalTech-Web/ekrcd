@@ -15,6 +15,12 @@ import {
   DollarSign,
   Users,
   Leaf,
+  ArrowRight,
+  TrendingUp,
+  TreePine,
+  Wheat,
+  Layers,
+  Shovel,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -215,126 +221,188 @@ export default function HspPage() {
 
       {/* Program Overview */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
+        <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full text-accent text-sm font-medium mb-5">
+                <Sprout size={16} />
+                CDFA-Funded Initiative
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
                 Program Overview
               </h2>
-              <p className="text-lg text-text-muted leading-relaxed mb-4">
-                EKRCD received{" "}
-                <span className="font-semibold text-foreground">
-                  $5 million
-                </span>{" "}
-                from the California Department of Food and Agriculture through
-                the Healthy Soils Program. EKRCD is one of{" "}
-                <span className="font-semibold text-foreground">
-                  14 funded groups
-                </span>{" "}
-                statewide and is the administering entity for growers in
-                portions of Fresno, Kings, and Tulare Counties.
+              <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+                EKRCD received $5 million from the California Department of Food
+                and Agriculture through the Healthy Soils Program - one of only
+                14 funded groups statewide. The program runs through summer 2028.
+                Round 1 is complete and Round 2 applications are now closed.
               </p>
-              <p className="text-lg text-text-muted leading-relaxed mb-4">
-                Approved farms receive direct payments up to{" "}
-                <span className="font-semibold text-foreground">
-                  $200,000 per project
-                </span>{" "}
-                to implement practices that build soil organic matter, reduce
-                greenhouse gas emissions, and sequester carbon. Compost
-                application, cover crops, mulching, residue management, and
-                reduced tillage all qualify.
+            </div>
+
+            {/* Highlight Stats Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
+                  <DollarSign size={32} className="text-accent" />
+                </div>
+                <p className="text-4xl sm:text-5xl font-bold text-accent font-[family-name:var(--font-heading)]">
+                  $5M
+                </p>
+                <p className="mt-2 text-text-muted text-sm font-medium">
+                  Total CDFA Funding
+                </p>
+              </div>
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">
+                  <MapPin size={32} className="text-secondary" />
+                </div>
+                <p className="text-4xl sm:text-5xl font-bold text-secondary font-[family-name:var(--font-heading)]">
+                  3
+                </p>
+                <p className="mt-2 text-text-muted text-sm font-medium">
+                  Counties Served
+                </p>
+                <p className="text-xs text-text-muted mt-1">
+                  Fresno, Kings, and Tulare
+                </p>
+              </div>
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp size={32} className="text-primary" />
+                </div>
+                <p className="text-4xl sm:text-5xl font-bold text-primary font-[family-name:var(--font-heading)]">
+                  $200K
+                </p>
+                <p className="mt-2 text-text-muted text-sm font-medium">
+                  Max Per Farm Project
+                </p>
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-gray-100">
+              <p className="text-text-muted leading-relaxed mb-4">
+                Approved farms receive direct payments to implement practices
+                that build soil organic matter, reduce greenhouse gas emissions,
+                and sequester carbon. Compost application, cover crops, mulching,
+                residue management, and reduced tillage all qualify.
               </p>
-              <p className="text-lg text-text-muted leading-relaxed">
-                The program runs through summer 2028. Round 1 is complete and
-                Round 2 applications are now closed.
+              <p className="text-text-muted leading-relaxed">
+                EKRCD is the administering entity for growers in portions of
+                Fresno, Kings, and Tulare Counties. The program supports
+                California&apos;s climate-smart agriculture goals while helping
+                local growers invest in long-term soil health.
               </p>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* Round 1 Results */}
+      {/* Round 1 Results - Dark Background */}
       <ScrollReveal>
-        <section className="py-20">
+        <section className="py-20 sm:py-24 bg-primary-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+              <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white/80 text-sm font-medium mb-5">
+                <BarChart3 size={16} />
+                Completed
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
                 Round 1 Results
               </h2>
-              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+              <p className="mt-4 text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
                 78 applications came in. EKRCD selected 20 projects and awarded
                 $2.6 million to farms across the three-county region.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
               {round1Stats.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={i}
-                    className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center"
+                    className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 p-8 text-center flex flex-col items-center hover:bg-white/15 transition-colors"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                      <Icon size={28} className="text-accent" />
+                    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                      <Icon size={28} className="text-accent-light" />
                     </div>
-                    <p className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                    <p className="text-4xl sm:text-5xl font-bold text-white font-[family-name:var(--font-heading)]">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-text-muted text-sm font-medium">
+                    <p className="mt-2 text-white/60 text-sm font-medium uppercase tracking-wider">
                       {stat.label}
                     </p>
                   </div>
                 );
               })}
             </div>
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-accent/5 rounded-2xl p-8 border border-accent/10">
-                <div className="flex items-center gap-3 mb-4">
-                  <Leaf size={22} className="text-accent" />
-                  <h3 className="text-lg font-semibold text-foreground font-[family-name:var(--font-heading)]">
-                    Funded Practices
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {round1Practices.map((practice) => (
-                    <span
-                      key={practice}
-                      className="px-4 py-2 bg-white text-foreground text-sm font-medium rounded-full border border-accent/20"
+
+            {/* Funded Practices */}
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h3 className="text-xl font-semibold text-white font-[family-name:var(--font-heading)] flex items-center justify-center gap-3">
+                  <Leaf size={22} className="text-accent-light" />
+                  Funded Practices
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                {[
+                  { practice: "Compost application", icon: Layers },
+                  { practice: "Cover crops", icon: Wheat },
+                  { practice: "Mulching", icon: TreePine },
+                  { practice: "Residue management", icon: Leaf },
+                  { practice: "Tillage", icon: Shovel },
+                ].map((item) => {
+                  const PracticeIcon = item.icon;
+                  return (
+                    <div
+                      key={item.practice}
+                      className="flex flex-col items-center gap-3 rounded-xl bg-white/10 border border-white/10 p-5 text-center hover:bg-white/15 transition-colors"
                     >
-                      {practice}
-                    </span>
-                  ))}
-                </div>
+                      <PracticeIcon size={24} className="text-accent-light" />
+                      <span className="text-white text-sm font-medium">
+                        {item.practice}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* Program Timeline */}
+      {/* Program Timeline - Numbered Steps */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
+        <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Timeline
               </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                Key milestones from the program launch through implementation.
+              </p>
             </div>
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <div className="relative">
                 {/* Vertical line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-accent/20" />
-                <div className="space-y-8">
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/40 to-accent/10" />
+                <div className="space-y-6">
                   {timeline.map((item, i) => (
-                    <div key={i} className="relative flex items-start gap-6">
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-accent flex items-center justify-center shrink-0 shadow-lg shadow-accent/20">
-                        <Clock size={20} className="text-white" />
+                    <div key={i} className="relative flex items-start gap-6 group">
+                      <div className="relative z-10 w-12 h-12 rounded-full bg-accent flex items-center justify-center shrink-0 shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform">
+                        <span className="text-white text-sm font-bold">
+                          {i + 1}
+                        </span>
                       </div>
-                      <div className="pt-2">
-                        <p className="text-sm font-semibold text-accent uppercase tracking-wide">
+                      <div className="flex-1 bg-white rounded-xl p-5 shadow-sm border border-gray-100 group-hover:shadow-md transition-shadow">
+                        <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
                           {item.date}
                         </p>
-                        <p className="mt-1 text-foreground font-medium">
+                        <p className="text-foreground font-medium">
                           {item.label}
                         </p>
                       </div>
@@ -355,31 +423,37 @@ export default function HspPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Training Events
               </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                In-person sessions to learn about program requirements and the
+                application process.
+              </p>
             </div>
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+              <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                <div className="bg-accent/10 px-8 py-5 flex items-center gap-4 border-b border-accent/10">
+                  <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
                     <Calendar size={24} className="text-accent" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground font-[family-name:var(--font-heading)]">
                       March 4
                     </h3>
-                    <p className="text-text-muted text-sm mt-1">
+                    <p className="text-text-muted text-sm">
                       Sessions at 10:00 AM and 3:00 PM
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 text-text-muted">
-                  <MapPin size={18} className="shrink-0 mt-0.5 text-accent" />
-                  <div>
-                    <p className="font-medium text-foreground">
-                      Kings County Farm Bureau Office
-                    </p>
-                    <p className="text-sm">
-                      870 Greenfield Ave, Hanford, CA 93230
-                    </p>
+                <div className="px-8 py-6">
+                  <div className="flex items-start gap-3 text-text-muted">
+                    <MapPin size={18} className="shrink-0 mt-0.5 text-accent" />
+                    <div>
+                      <p className="font-medium text-foreground">
+                        Kings County Farm Bureau Office
+                      </p>
+                      <p className="text-sm">
+                        870 Greenfield Ave, Hanford, CA 93230
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -401,7 +475,7 @@ export default function HspPage() {
                 application and request for grant applications.
               </p>
             </div>
-            <div className="max-w-3xl mx-auto space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {resources.map((resource, i) => (
                 <Link
                   key={i}
@@ -409,20 +483,21 @@ export default function HspPage() {
                   target="_blank"
                   className="group card-hover flex items-center gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-accent/20 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <FileText size={20} className="text-accent" />
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <FileText size={22} className="text-accent" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-foreground text-sm sm:text-base truncate">
+                    <p className="font-semibold text-foreground text-sm sm:text-base leading-snug">
                       {resource.title}
                     </p>
-                    <p className="text-text-muted text-xs mt-0.5">
-                      {resource.filename}
+                    <p className="text-text-muted text-xs mt-1 flex items-center gap-1">
+                      <Download size={12} />
+                      PDF
                     </p>
                   </div>
-                  <Download
+                  <ArrowRight
                     size={18}
-                    className="text-text-muted group-hover:text-accent shrink-0 transition-colors"
+                    className="text-text-muted group-hover:text-accent shrink-0 transition-colors group-hover:translate-x-1 duration-200"
                   />
                 </Link>
               ))}
@@ -439,21 +514,39 @@ export default function HspPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Gallery
               </h2>
+              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+                On-the-ground results from the Healthy Soils Program across the
+                Central Valley.
+              </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {galleryImages.map((img, i) => (
                 <div
                   key={i}
-                  className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm"
+                  className={`relative rounded-2xl overflow-hidden shadow-sm group ${
+                    i === 0
+                      ? "col-span-2 row-span-2 aspect-square"
+                      : "aspect-[4/3]"
+                  }`}
                 >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes={
+                      i === 0
+                        ? "(max-width: 640px) 100vw, 50vw"
+                        : "(max-width: 640px) 50vw, 25vw"
+                    }
                     quality={75}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-white text-xs sm:text-sm font-medium leading-snug">
+                      {img.alt.split(" - ")[0]}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -461,61 +554,75 @@ export default function HspPage() {
         </section>
       </ScrollReveal>
 
-      {/* Contact */}
+      {/* CTA - Contact */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
-                Get in Touch
+        <section className="py-20 sm:py-24 bg-primary-dark relative overflow-hidden">
+          {/* Decorative dots */}
+          <div className="absolute inset-0 hero-dots opacity-30" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)] mb-6">
+                Questions About the Program?
               </h2>
-              <p className="text-text-muted mb-8">
-                Questions about whether your farm qualifies or what to expect
-                from the process?{" "}
+              <p className="text-lg text-white/70 mb-10 leading-relaxed">
+                Whether you want to know if your farm qualifies or need help
+                understanding the process, our team is here to help.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
                 <Link
                   href="/contact"
-                  className="text-accent font-semibold hover:underline"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-white font-semibold rounded-xl hover:bg-accent-light transition-colors shadow-lg shadow-accent/30 text-lg"
                 >
-                  Send us a message
-                </Link>{" "}
-                or reach us directly below.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a
-                  href="mailto:info@ekrcd.org"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-white text-foreground font-semibold rounded-xl hover:shadow-md transition-all border border-gray-200"
-                >
-                  <Mail size={18} className="text-accent" />
-                  info@ekrcd.org
-                </a>
+                  <Mail size={20} />
+                  Send Us a Message
+                  <ArrowRight size={18} />
+                </Link>
                 <a
                   href="tel:+15593094030"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-white text-foreground font-semibold rounded-xl hover:shadow-md transition-all border border-gray-200"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/20 text-lg"
                 >
-                  <Phone size={18} className="text-accent" />
+                  <Phone size={20} />
                   (559) 309-4030
                 </a>
               </div>
-              <p className="mt-8 text-sm text-text-muted">
-                Also looking to reduce water use on your operation? Learn about
-                the{" "}
-                <Link
-                  href="/wellup"
-                  className="text-secondary font-semibold hover:underline"
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white/60 text-sm">
+                <a
+                  href="mailto:info@ekrcd.org"
+                  className="hover:text-white transition-colors"
                 >
-                  WELLUP water efficiency program
-                </Link>
-                , which offers free pump tests and irrigation evaluations. You
-                can also review our{" "}
-                <Link
-                  href="/resources"
-                  className="text-primary font-semibold hover:underline"
-                >
-                  resource partners
-                </Link>{" "}
-                for additional support agencies in the region.
-              </p>
+                  info@ekrcd.org
+                </a>
+                <span className="hidden sm:inline">|</span>
+                <span>870 Greenfield Avenue, Hanford, CA 93230</span>
+              </div>
             </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Cross-promote other programs */}
+      <ScrollReveal>
+        <section className="py-16 bg-sand">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-text-muted leading-relaxed">
+              Also looking to reduce water use on your operation? Learn about
+              the{" "}
+              <Link
+                href="/wellup"
+                className="text-secondary font-semibold hover:underline"
+              >
+                WELLUP water efficiency program
+              </Link>
+              , which offers free pump tests and irrigation evaluations. You can
+              also review our{" "}
+              <Link
+                href="/resources"
+                className="text-primary font-semibold hover:underline"
+              >
+                resource partners
+              </Link>{" "}
+              for additional support agencies in the region.
+            </p>
           </div>
         </section>
       </ScrollReveal>

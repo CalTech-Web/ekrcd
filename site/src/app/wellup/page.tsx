@@ -7,10 +7,16 @@ import {
   Download,
   Mail,
   Phone,
-  Clock,
   Target,
   Gauge,
   GraduationCap,
+  DollarSign,
+  MapPin,
+  Sparkles,
+  ArrowRight,
+  CalendarRange,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -166,41 +172,89 @@ export default function WellupPage() {
         </div>
       </section>
 
-      {/* Program Overview */}
+      {/* Program Overview - stat highlights with split layout */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
+        <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
-                Program Overview
-              </h2>
-              <p className="text-lg text-text-muted leading-relaxed">
-                EKRCD received{" "}
-                <span className="font-semibold text-foreground">$500,000</span>{" "}
-                from the California Department of Food and Agriculture (CDFA)
-                through the Water Efficiency Technical Assistance Program. The
-                grant runs from spring 2024 through spring 2026 and covers
-                growers in portions of{" "}
-                <span className="font-semibold text-foreground">
-                  Fresno, Kings, and Tulare Counties
-                </span>
-                . There is no cost to participate and no minimum acreage
-                requirement.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left - text content */}
+              <div>
+                <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                  <Droplets size={16} />
+                  CDFA-Funded Program
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
+                  Program Overview
+                </h2>
+                <p className="text-lg text-text-muted leading-relaxed mb-4">
+                  EKRCD received $500,000 from the California Department of Food
+                  and Agriculture (CDFA) through the Water Efficiency Technical
+                  Assistance Program. The grant runs from spring 2024 through
+                  spring 2026 and covers growers in portions of Fresno, Kings,
+                  and Tulare Counties.
+                </p>
+                <p className="text-lg text-text-muted leading-relaxed">
+                  There is no cost to participate and no minimum acreage
+                  requirement. Every grower in the service area is eligible.
+                </p>
+              </div>
+
+              {/* Right - stat cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                    <DollarSign size={28} className="text-secondary" />
+                  </div>
+                  <p className="text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                    $500K
+                  </p>
+                  <p className="text-sm text-text-muted mt-1">CDFA Grant Funding</p>
+                </div>
+
+                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                    <MapPin size={28} className="text-accent" />
+                  </div>
+                  <p className="text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                    3
+                  </p>
+                  <p className="text-sm text-text-muted mt-1">Counties Served</p>
+                </div>
+
+                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Sparkles size={28} className="text-primary" />
+                  </div>
+                  <p className="text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                    FREE
+                  </p>
+                  <p className="text-sm text-text-muted mt-1">No Cost to Growers</p>
+                </div>
+
+                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                    <Users size={28} className="text-secondary" />
+                  </div>
+                  <p className="text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                    Any Size
+                  </p>
+                  <p className="text-sm text-text-muted mt-1">No Acreage Minimum</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* Objectives */}
+      {/* Objectives - cards with colored top accent and number badges */}
       <ScrollReveal>
-        <section className="py-20">
+        <section className="py-20 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Objectives
               </h2>
-              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+              <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
                 Every service in the program ties back to one of three goals.
               </p>
             </div>
@@ -210,22 +264,29 @@ export default function WellupPage() {
                 return (
                   <div
                     key={obj.number}
-                    className="card-hover relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+                    className="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                   >
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                        <span className="text-secondary text-xl font-bold">
-                          {obj.number}
-                        </span>
+                    {/* Colored top strip */}
+                    <div className="h-2 bg-gradient-to-r from-secondary to-secondary-light" />
+                    <div className="p-8 flex flex-col flex-1">
+                      {/* Number badge and icon */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0 shadow-md shadow-secondary/20">
+                          <span className="text-white text-lg font-bold">
+                            {obj.number}
+                          </span>
+                        </div>
+                        <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                          <Icon size={24} className="text-secondary" />
+                        </div>
                       </div>
-                      <Icon size={28} className="text-secondary" />
+                      <h3 className="text-xl font-semibold text-foreground mb-3 font-[family-name:var(--font-heading)]">
+                        {obj.title}
+                      </h3>
+                      <p className="text-text-muted text-sm leading-relaxed flex-1">
+                        {obj.description}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3 font-[family-name:var(--font-heading)]">
-                      {obj.title}
-                    </h3>
-                    <p className="text-text-muted text-sm leading-relaxed">
-                      {obj.description}
-                    </p>
                   </div>
                 );
               })}
@@ -234,15 +295,15 @@ export default function WellupPage() {
         </section>
       </ScrollReveal>
 
-      {/* Program Benefits */}
+      {/* Program Benefits - engaging cards with icons and badges */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
+        <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Benefits
               </h2>
-              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
+              <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
                 All services are free. Here is what growers can access through
                 the program.
               </p>
@@ -251,13 +312,12 @@ export default function WellupPage() {
               {benefits.map((benefit, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4"
+                  className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4"
                 >
-                  <CheckCircle
-                    size={22}
-                    className="text-secondary shrink-0 mt-0.5"
-                  />
-                  <p className="text-foreground text-sm font-medium leading-relaxed">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle size={20} className="text-accent" />
+                  </div>
+                  <p className="text-foreground text-sm font-medium leading-relaxed pt-2">
                     {benefit}
                   </p>
                 </div>
@@ -267,30 +327,64 @@ export default function WellupPage() {
         </section>
       </ScrollReveal>
 
-      {/* Program Timeline */}
+      {/* Program Timeline - horizontal visual design */}
       <ScrollReveal>
-        <section className="py-20">
+        <section className="py-20 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Timeline
               </h2>
+              <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
+                WELLUP is a time-limited grant. Services are available while
+                funding lasts.
+              </p>
             </div>
-            <div className="max-w-xl mx-auto">
-              <div className="relative">
-                {/* Vertical line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-secondary/20" />
+            <div className="max-w-3xl mx-auto">
+              {/* Horizontal timeline for md+ */}
+              <div className="hidden md:block relative">
+                {/* Connecting line */}
+                <div className="absolute top-8 left-[10%] right-[10%] h-1 bg-gradient-to-r from-secondary via-secondary/60 to-secondary rounded-full" />
+                <div className="grid grid-cols-2 gap-8">
+                  {timeline.map((item, i) => (
+                    <div key={i} className="flex flex-col items-center text-center">
+                      <div className="relative z-10 w-16 h-16 rounded-full bg-secondary flex items-center justify-center shadow-lg shadow-secondary/25 mb-5">
+                        {i === 0 ? (
+                          <CalendarRange size={24} className="text-white" />
+                        ) : (
+                          <ShieldCheck size={24} className="text-white" />
+                        )}
+                      </div>
+                      <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full">
+                        <p className="text-sm font-bold text-secondary uppercase tracking-wider mb-2">
+                          {item.date}
+                        </p>
+                        <p className="text-foreground font-semibold text-lg font-[family-name:var(--font-heading)]">
+                          {item.label}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Vertical timeline for mobile */}
+              <div className="md:hidden relative">
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary/20" />
                 <div className="space-y-10">
                   {timeline.map((item, i) => (
                     <div key={i} className="relative flex items-start gap-6">
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0 shadow-lg shadow-secondary/20">
-                        <Clock size={20} className="text-white" />
+                      <div className="relative z-10 w-16 h-16 rounded-full bg-secondary flex items-center justify-center shrink-0 shadow-lg shadow-secondary/25">
+                        {i === 0 ? (
+                          <CalendarRange size={24} className="text-white" />
+                        ) : (
+                          <ShieldCheck size={24} className="text-white" />
+                        )}
                       </div>
-                      <div className="pt-2">
-                        <p className="text-sm font-semibold text-secondary uppercase tracking-wide">
+                      <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex-1">
+                        <p className="text-sm font-bold text-secondary uppercase tracking-wider mb-1">
                           {item.date}
                         </p>
-                        <p className="mt-1 text-foreground font-medium text-lg">
+                        <p className="text-foreground font-semibold text-lg font-[family-name:var(--font-heading)]">
                           {item.label}
                         </p>
                       </div>
@@ -305,9 +399,12 @@ export default function WellupPage() {
 
       {/* Eligibility / Intake Form */}
       <ScrollReveal>
-        <section className="py-20 bg-secondary/5">
+        <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
+              <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+                <Download size={28} className="text-secondary" />
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
                 Eligibility
               </h2>
@@ -335,29 +432,39 @@ export default function WellupPage() {
         </section>
       </ScrollReveal>
 
-      {/* Photo Gallery */}
+      {/* Photo Gallery - improved layout with hover overlays */}
       <ScrollReveal>
-        <section className="py-20">
+        <section className="py-20 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Program Gallery
               </h2>
+              <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
+                A look at WELLUP services in action across the Central Valley.
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {galleryImages.map((img, i) => (
                 <div
                   key={i}
-                  className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm"
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md"
                 >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 33vw"
                     quality={75}
                   />
+                  {/* Hover overlay with alt text caption */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-white text-sm font-medium leading-snug">
+                      {img.alt.replace("WELLUP program - ", "")}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -365,42 +472,46 @@ export default function WellupPage() {
         </section>
       </ScrollReveal>
 
-      {/* Contact */}
+      {/* Contact CTA - prominent dark background */}
       <ScrollReveal>
-        <section className="py-20 bg-sand">
+        <section className="py-20 sm:py-24 bg-primary-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)] mb-6">
-                Get in Touch
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6">
+                <Droplets size={28} className="text-secondary" />
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)] mb-6">
+                Ready to Get Started?
               </h2>
-              <p className="text-text-muted mb-8">
+              <p className="text-lg text-white/70 leading-relaxed mb-10">
                 Not sure if your farm qualifies or want to know what to expect
-                from a pump test?{" "}
-                <Link
-                  href="/contact"
-                  className="text-secondary font-semibold hover:underline"
-                >
-                  Visit our contact page
-                </Link>{" "}
-                or reach us directly by phone or email.
+                from a pump test? Contact us directly or visit our contact page
+                to send a message.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10">
                 <a
                   href="mailto:info@ekrcd.org"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-white text-foreground font-semibold rounded-xl hover:shadow-md transition-all border border-gray-200"
+                  className="inline-flex items-center gap-3 px-7 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/15"
                 >
-                  <Mail size={18} className="text-secondary" />
+                  <Mail size={20} className="text-secondary" />
                   info@ekrcd.org
                 </a>
                 <a
                   href="tel:+15593094030"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-white text-foreground font-semibold rounded-xl hover:shadow-md transition-all border border-gray-200"
+                  className="inline-flex items-center gap-3 px-7 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/15"
                 >
-                  <Phone size={18} className="text-secondary" />
+                  <Phone size={20} className="text-secondary" />
                   (559) 309-4030
                 </a>
               </div>
-              <p className="mt-8 text-sm text-text-muted">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-secondary-light transition-all shadow-lg shadow-secondary/20"
+              >
+                Visit Contact Page
+                <ArrowRight size={18} />
+              </Link>
+              <p className="mt-10 text-sm text-white/50">
                 Also interested in soil health funding? Learn about the{" "}
                 <Link
                   href="/hsp"
