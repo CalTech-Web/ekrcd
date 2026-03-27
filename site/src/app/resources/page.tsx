@@ -19,9 +19,9 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Conservation Resource Partners - EKRCD",
+  title: "Conservation Resource Partners Central California - EKRCD",
   description:
-    "EKRCD's partner agencies - CARCD, Kings River Conservation District, Kings County Farm Bureau, and NRCS - supporting groundwater, soil, and land conservation in Central California.",
+    "EKRCD conservation resource partners including NRCS, CARCD, Kings River Conservation District, and Kings County Farm Bureau serving Central California.",
   alternates: { canonical: "/resources" },
   openGraph: {
     title: "Conservation Resource Partners - EKRCD",
@@ -143,7 +143,7 @@ export default function ResourcesPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-resources-vineyard.jpeg"
-          alt="Vineyard rows on a hillside in Central California, representing EKRCD conservation resource partners"
+          alt="Vineyard hillside in Central California - EKRCD conservation resource partners serving Fresno, Kings, and Tulare Counties"
           fill
           className="object-cover object-center"
           sizes="100vw"

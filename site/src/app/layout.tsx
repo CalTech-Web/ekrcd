@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | EKRCD",
   },
   description:
-    "EKRCD provides free water efficiency and soil health programs to growers in Fresno, Kings, and Tulare Counties. CDFA-funded WELLUP and Healthy Soils grants available.",
+    "EKRCD provides free water efficiency and soil health programs to growers in Fresno, Kings, and Tulare Counties. CDFA-funded WELLUP and Healthy Soils grants.",
   keywords: [
     "EKRCD",
     "Excelsior Kings River",

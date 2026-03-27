@@ -28,9 +28,9 @@ const ContactForm = dynamic(() => import("@/components/ContactForm"), {
 });
 
 export const metadata: Metadata = {
-  title: "Contact EKRCD - Hanford, CA Conservation District",
+  title: "Contact EKRCD Conservation District - Hanford, CA",
   description:
-    "Contact the Excelsior-Kings River Resource Conservation District in Hanford, CA. Call (559) 309-4030 or email info@ekrcd.org for WELLUP and Healthy Soils inquiries.",
+    "Contact EKRCD conservation district in Hanford, CA. Call (559) 309-4030 or email info@ekrcd.org for free WELLUP and Healthy Soils program assistance.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact EKRCD - Hanford, CA Conservation District",
@@ -77,7 +77,7 @@ export default function ContactPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-contact-tree-sunlight.jpeg"
-          alt="Lone tree on farmland with warm sunlight, representing EKRCD contact and community outreach in Hanford, CA"
+          alt="Farmland with warm sunlight in Hanford, CA - contact EKRCD conservation district for free grower assistance"
           fill
           className="object-cover object-center"
           sizes="100vw"

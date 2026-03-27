@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -16,6 +17,18 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 import CountUp from "@/components/CountUp";
 
+export const metadata: Metadata = {
+  title:
+    "Resource Conservation District Fresno Kings Tulare - EKRCD | Hanford, CA",
+  description:
+    "EKRCD is a resource conservation district serving Fresno, Kings, and Tulare Counties with free CDFA-funded water efficiency and soil health programs for growers.",
+  openGraph: {
+    title: "Resource Conservation District Fresno Kings Tulare - EKRCD",
+    description:
+      "Free CDFA-funded programs for growers: WELLUP pump efficiency testing and Healthy Soils grants up to $200,000 across Fresno, Kings, and Tulare Counties.",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
@@ -23,7 +36,7 @@ export default function HomePage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-homepage-almond-blossoms.jpeg"
-          alt="Almond blossoms in full bloom across Central California farmland, representing EKRCD conservation in Fresno, Kings, and Tulare Counties"
+          alt="Almond blossoms in full bloom across Central California farmland - resource conservation district serving Fresno, Kings, and Tulare Counties"
           fill
           className="object-cover object-center"
           priority
@@ -46,10 +59,10 @@ export default function HomePage() {
               Excelsior-Kings River Resource Conservation District
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              A locally governed conservation district working with farmers,
-              ranchers, and Groundwater Sustainability Agencies across Fresno,
-              Kings, and Tulare Counties to put water in the ground and keep
-              soil productive for the long run.
+              A locally governed resource conservation district working with
+              farmers, ranchers, and Groundwater Sustainability Agencies across
+              Fresno, Kings, and Tulare Counties to put water in the ground and
+              keep soil productive for the long run.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
@@ -447,7 +460,7 @@ export default function HomePage() {
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/vineyard.jpg"
-                  alt="Vineyard rows in Central California representing EKRCD conservation work"
+                  alt="Vineyard rows in Central California - EKRCD resource conservation district agricultural programs"
                   width={640}
                   height={480}
                   className="w-full h-auto object-cover"

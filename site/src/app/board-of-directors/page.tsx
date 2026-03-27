@@ -5,9 +5,9 @@ import { Users, Vote, MapPin, UserCheck, Shield, Crown } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Board of Directors - EKRCD Governance",
+  title: "Board of Directors - EKRCD Conservation District Governance",
   description:
-    "Meet the EKRCD Board of Directors governing water conservation and soil health programs across Fresno, Kings, and Tulare Counties. Five locally elected members.",
+    "Meet the five locally elected EKRCD board of directors governing conservation programs across Fresno, Kings, and Tulare Counties in Central California.",
   alternates: { canonical: "/board-of-directors" },
   openGraph: {
     title: "Board of Directors - EKRCD Governance",
@@ -116,7 +116,7 @@ export default function BoardOfDirectorsPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-board-sunset-field.jpeg"
-          alt="Sunset over green agricultural fields, representing EKRCD Board of Directors governance across Central California"
+          alt="Sunset over agricultural fields in Central California - EKRCD conservation district board of directors governance"
           fill
           className="object-cover object-center"
           sizes="100vw"

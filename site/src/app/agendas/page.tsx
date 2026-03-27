@@ -12,9 +12,9 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Board Meeting Agendas - EKRCD Public Records",
+  title: "Board Meeting Agendas - Conservation District Public Records",
   description:
-    "Public archive of EKRCD board meeting agendas and packets since April 2024. Download current and past meeting documents from the Excelsior-Kings River RCD.",
+    "Public archive of EKRCD board meeting agendas and packets since April 2024. Download meeting documents from the Excelsior-Kings River conservation district.",
   alternates: { canonical: "/agendas" },
   openGraph: {
     title: "Board Meeting Agendas - EKRCD Public Records",
@@ -251,7 +251,7 @@ export default function AgendasPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-agendas-wheat.jpeg"
-          alt="Golden wheat ears in a California field, representing EKRCD public board meeting agendas and transparency"
+          alt="Golden wheat field in California - EKRCD conservation district board meeting agendas and public records"
           fill
           className="object-cover object-center"
           sizes="100vw"

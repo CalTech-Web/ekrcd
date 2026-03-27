@@ -21,9 +21,9 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "WELLUP Water Efficiency Program - Free Pump Tests",
+  title: "WELLUP Program - Free Pump Efficiency Testing Central Valley",
   description:
-    "Free pump efficiency testing and on-farm irrigation assistance for growers in Fresno, Kings, and Tulare Counties. CDFA-funded WELLUP program through EKRCD.",
+    "Free pump efficiency testing and irrigation evaluation for Central Valley growers. CDFA-funded WELLUP program serves Fresno, Kings, and Tulare Counties.",
   alternates: { canonical: "/wellup" },
   openGraph: {
     title: "WELLUP Water Efficiency Program - Free Pump Tests | EKRCD",
@@ -148,7 +148,7 @@ export default function WellupPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-wellup-irrigation.jpeg"
-          alt="Irrigation sprinklers watering vineyard rows in Central Valley, representing EKRCD WELLUP water efficiency program"
+          alt="Free pump efficiency testing and irrigation evaluation in Central Valley - EKRCD WELLUP water efficiency program"
           fill
           className="object-cover object-center"
           sizes="100vw"

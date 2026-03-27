@@ -25,9 +25,9 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Healthy Soils Program - Grants Up to $200,000",
+  title: "Healthy Soils Program California - Grants Up to $200,000 | EKRCD",
   description:
-    "EKRCD's CDFA Healthy Soils Program funds compost, cover crops, mulching, and other soil health practices. Grants up to $200,000 per farm in Fresno, Kings, and Tulare Counties.",
+    "CDFA Healthy Soils Program grants up to $200,000 for California growers. EKRCD funds compost, cover crops, and mulching in Fresno, Kings, and Tulare Counties.",
   alternates: { canonical: "/hsp" },
   openGraph: {
     title: "Healthy Soils Program - Grants Up to $200,000 | EKRCD",
@@ -181,7 +181,7 @@ export default function HspPage() {
       <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-hsp-corn-field.jpeg"
-          alt="Rows of corn growing in a California field, representing EKRCD Healthy Soils Program supporting on-farm soil health"
+          alt="California farm field representing the CDFA Healthy Soils Program - grants for compost, cover crops, and soil health practices"
           fill
           className="object-cover object-center"
           sizes="100vw"
