@@ -139,7 +139,7 @@ export default function WellupPage() {
         }}
       />
       {/* Hero */}
-      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative min-h-[350px] sm:min-h-[500px] flex items-center overflow-hidden pt-[75px]">
         <Image
           src="/images/heroes/hero-wellup-irrigation.jpeg"
           alt="Irrigation sprinklers watering vineyard rows in Central Valley, representing EKRCD WELLUP water efficiency program"
@@ -147,17 +147,17 @@ export default function WellupPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-black/20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
               <Droplets size={16} />
               CDFA Water Efficiency Technical Assistance
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-heading)]">
               WELLUP Program
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
               A $500,000 CDFA program bringing free pump tests and hands-on
               irrigation help to farms of every size across Fresno, Kings, and
               Tulare Counties.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -27,6 +27,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -39,29 +40,42 @@ export default function Header() {
     setDropdownOpen(false);
   }, [pathname]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md"
-          : "bg-white shadow-sm"
+          ? "bg-white/90 backdrop-blur-md shadow-md"
+          : "bg-black/20 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
+          {/* Logo only */}
+          <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/images/logo.jpg"
               alt="EKRCD Logo"
               width={56}
               height={56}
-              className="rounded-full"
+              className={`rounded-full transition-all duration-300 ${
+                scrolled ? "" : "ring-2 ring-white/40"
+              }`}
               priority
             />
-            <span className="hidden sm:block text-sm font-semibold text-primary leading-tight max-w-[200px]">
-              Excelsior-Kings River RCD
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -71,15 +85,20 @@ export default function Header() {
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
+                  ref={dropdownRef}
                 >
                   <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
                     className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      pathname === "/board-of-directors" ||
-                      pathname === "/agendas"
-                        ? "text-primary bg-primary/5"
-                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                      scrolled
+                        ? pathname === "/board-of-directors" ||
+                          pathname === "/agendas"
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground hover:text-primary hover:bg-primary/5"
+                        : pathname === "/board-of-directors" ||
+                            pathname === "/agendas"
+                          ? "text-white bg-white/15"
+                          : "text-white/90 hover:text-white hover:bg-white/10"
                     }`}
                   >
                     {item.label}
@@ -94,10 +113,10 @@ export default function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block px-4 py-2.5 text-sm transition-colors ${
+                          className={`block px-4 py-2.5 text-sm transition-all ${
                             pathname === child.href
                               ? "text-primary bg-primary/5 font-medium"
-                              : "text-gray-700 hover:text-primary hover:bg-primary/5"
+                              : "text-gray-700 hover:text-primary hover:bg-primary/5 hover:pl-5"
                           }`}
                         >
                           {child.label}
@@ -111,9 +130,13 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    pathname === item.href
-                      ? "text-primary bg-primary/5"
-                      : "text-foreground hover:text-primary hover:bg-primary/5"
+                    scrolled
+                      ? pathname === item.href
+                        ? "text-primary bg-primary/5"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                      : pathname === item.href
+                        ? "text-white bg-white/15"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -125,7 +148,11 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-gray-100 transition-colors"
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              scrolled
+                ? "text-foreground hover:bg-gray-100"
+                : "text-white hover:bg-white/10"
+            }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
