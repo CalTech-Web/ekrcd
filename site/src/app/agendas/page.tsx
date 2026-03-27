@@ -406,7 +406,15 @@ export default function AgendasPage() {
               >
                 contact us
               </Link>{" "}
-              with questions about district business.
+              with questions about district business. You can also explore
+              EKRCD&apos;s active programs through our{" "}
+              <Link
+                href="/resources"
+                className="text-primary font-semibold hover:underline"
+              >
+                resource partners page
+              </Link>
+              .
             </p>
           </div>
         </section>

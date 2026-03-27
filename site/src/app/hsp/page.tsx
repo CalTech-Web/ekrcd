@@ -623,7 +623,21 @@ export default function HspPage() {
               >
                 resource partners
               </Link>{" "}
-              for additional support agencies in the region.
+              for additional support agencies, check{" "}
+              <Link
+                href="/agendas"
+                className="text-primary font-semibold hover:underline"
+              >
+                board meeting agendas
+              </Link>{" "}
+              for program updates, or meet the{" "}
+              <Link
+                href="/board-of-directors"
+                className="text-primary font-semibold hover:underline"
+              >
+                board of directors
+              </Link>{" "}
+              who oversee the Healthy Soils Program.
             </p>
           </div>
         </section>

@@ -258,8 +258,11 @@ export default function ContactPage() {
                   Free Pump Tests
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Ask about WELLUP pump efficiency testing at no cost to your
-                  operation.
+                  Ask about{" "}
+                  <Link href="/wellup" className="text-secondary font-medium hover:underline">
+                    WELLUP pump efficiency testing
+                  </Link>{" "}
+                  at no cost to your operation.
                 </p>
               </div>
 
@@ -271,8 +274,11 @@ export default function ContactPage() {
                   Soil Health Grants
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Learn about Healthy Soils Program grants for on-farm
-                  conservation projects.
+                  Learn about{" "}
+                  <Link href="/hsp" className="text-accent font-medium hover:underline">
+                    Healthy Soils Program grants
+                  </Link>{" "}
+                  for on-farm conservation projects.
                 </p>
               </div>
 
@@ -284,8 +290,11 @@ export default function ContactPage() {
                   Board Meetings
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Request meeting agendas, ask about upcoming sessions, or
-                  submit public comment.
+                  Request{" "}
+                  <Link href="/agendas" className="text-primary font-medium hover:underline">
+                    meeting agendas
+                  </Link>
+                  , ask about upcoming sessions, or submit public comment.
                 </p>
               </div>
 
@@ -297,8 +306,10 @@ export default function ContactPage() {
                   General Inquiries
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Partnership opportunities, resource referrals, or any
-                  district-related questions.
+                  <Link href="/resources" className="text-primary font-medium hover:underline">
+                    Partnership opportunities
+                  </Link>
+                  , resource referrals, or any district-related questions.
                 </p>
               </div>
             </div>
@@ -342,7 +353,7 @@ export default function ContactPage() {
                     one-on-one technical assistance for growers of any acreage.
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary group-hover:gap-3 transition-all">
-                    Learn More
+                    Explore WELLUP Program
                     <ArrowRight size={16} />
                   </span>
                 </div>
@@ -370,7 +381,7 @@ export default function ContactPage() {
                     that improve soil health and reduce greenhouse gas emissions.
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent group-hover:gap-3 transition-all">
-                    Learn More
+                    Explore Healthy Soils Grants
                     <ArrowRight size={16} />
                   </span>
                 </div>

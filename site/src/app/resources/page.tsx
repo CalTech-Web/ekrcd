@@ -439,6 +439,7 @@ export default function ResourcesPage() {
                   description:
                     "Meet the five locally elected members who guide EKRCD policy.",
                   href: "/board-of-directors",
+                  cta: "Meet the Board",
                   icon: Users,
                   color: "primary" as const,
                 },
@@ -447,6 +448,7 @@ export default function ResourcesPage() {
                   description:
                     "Browse the full archive of board meeting agendas and notices.",
                   href: "/agendas",
+                  cta: "Browse Agendas",
                   icon: FileText,
                   color: "secondary" as const,
                 },
@@ -455,6 +457,7 @@ export default function ResourcesPage() {
                   description:
                     "Free pump testing and irrigation assistance for local growers.",
                   href: "/wellup",
+                  cta: "Explore WELLUP",
                   icon: Droplets,
                   color: "accent" as const,
                 },
@@ -463,6 +466,7 @@ export default function ResourcesPage() {
                   description:
                     "Questions about a program or how to get involved? Reach out.",
                   href: "/contact",
+                  cta: "Get in Touch",
                   icon: MapPin,
                   color: "primary" as const,
                 },
@@ -494,7 +498,7 @@ export default function ResourcesPage() {
                         {link.description}
                       </p>
                       <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:gap-3 transition-all">
-                        Learn More
+                        {link.cta}
                         <ArrowRight size={16} />
                       </span>
                     </div>

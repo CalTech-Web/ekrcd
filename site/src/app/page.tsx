@@ -488,6 +488,15 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div className="text-center mt-8">
+              <Link
+                href="/resources"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors"
+              >
+                View all resource partners and agency contacts
+                <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </section>
       </ScrollReveal>

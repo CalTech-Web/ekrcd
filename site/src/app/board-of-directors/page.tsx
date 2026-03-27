@@ -280,14 +280,35 @@ export default function BoardOfDirectorsPage() {
               >
                 board meeting agendas
               </Link>{" "}
-              going back to April 2024, or{" "}
+              going back to April 2024, explore the{" "}
+              <Link
+                href="/wellup"
+                className="text-secondary font-semibold hover:underline"
+              >
+                WELLUP water efficiency program
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/hsp"
+                className="text-accent font-semibold hover:underline"
+              >
+                Healthy Soils grants
+              </Link>{" "}
+              the board oversees, review our{" "}
+              <Link
+                href="/resources"
+                className="text-primary font-semibold hover:underline"
+              >
+                conservation resource partners
+              </Link>
+              , or{" "}
               <Link
                 href="/contact"
                 className="text-secondary font-semibold hover:underline"
               >
                 contact the district
               </Link>{" "}
-              with questions about governance or programs.
+              with questions about governance.
             </p>
           </div>
         </section>

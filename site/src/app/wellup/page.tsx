@@ -521,7 +521,29 @@ export default function WellupPage() {
                 >
                   Healthy Soils Program
                 </Link>
-                , which provides grants up to $200,000 per farm.
+                , which provides grants up to $200,000 per farm. You can also
+                browse our{" "}
+                <Link
+                  href="/resources"
+                  className="text-white/70 font-semibold hover:underline"
+                >
+                  conservation resource partners
+                </Link>
+                , review{" "}
+                <Link
+                  href="/agendas"
+                  className="text-white/70 font-semibold hover:underline"
+                >
+                  upcoming board meeting agendas
+                </Link>
+                , or meet the{" "}
+                <Link
+                  href="/board-of-directors"
+                  className="text-white/70 font-semibold hover:underline"
+                >
+                  board of directors
+                </Link>{" "}
+                who oversee the district.
               </p>
             </div>
           </div>
