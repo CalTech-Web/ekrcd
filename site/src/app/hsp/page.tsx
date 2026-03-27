@@ -234,9 +234,18 @@ export default function HspPage() {
               </h2>
               <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
                 EKRCD received $5 million from the California Department of Food
-                and Agriculture through the Healthy Soils Program - one of only
-                14 funded groups statewide. The program runs through summer 2028.
-                Round 1 is complete and Round 2 applications are now closed.
+                and Agriculture through the{" "}
+                <a
+                  href="https://www.cdfa.ca.gov/oars/healthysoils/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent font-semibold hover:underline"
+                >
+                  CDFA Healthy Soils Program
+                </a>{" "}
+                - one of only 14 funded groups statewide. The program runs
+                through summer 2028. Round 1 is complete and Round 2
+                applications are now closed.
               </p>
             </div>
 

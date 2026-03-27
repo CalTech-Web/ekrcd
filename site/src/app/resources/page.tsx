@@ -181,7 +181,16 @@ export default function ResourcesPage() {
                   Stronger Together
                 </h2>
                 <p className="text-text-muted leading-relaxed text-base sm:text-lg">
-                  EKRCD does not work in isolation. Federal, state, and local
+                  EKRCD does not work in isolation. Federal agencies like the{" "}
+                  <a
+                    href="https://www.nrcs.usda.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-semibold hover:underline"
+                  >
+                    USDA Natural Resources Conservation Service
+                  </a>
+                  , state, and local
                   agencies each bring different resources and reach to
                   conservation work. These partnerships make it possible to
                   deliver free programs to growers across Fresno, Kings, and

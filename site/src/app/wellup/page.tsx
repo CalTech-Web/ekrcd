@@ -189,8 +189,16 @@ export default function WellupPage() {
                 </h2>
                 <p className="text-lg text-text-muted leading-relaxed mb-4">
                   EKRCD received $500,000 from the California Department of Food
-                  and Agriculture (CDFA) through the Water Efficiency Technical
-                  Assistance Program. The grant runs from spring 2024 through
+                  and Agriculture (CDFA) through the{" "}
+                  <a
+                    href="https://www.cdfa.ca.gov/oars/technical/weta.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary font-semibold hover:underline"
+                  >
+                    Water Efficiency Technical Assistance Program
+                  </a>
+                  . The grant runs from spring 2024 through
                   spring 2026 and covers growers in portions of Fresno, Kings,
                   and Tulare Counties.
                 </p>

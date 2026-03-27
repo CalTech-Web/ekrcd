@@ -269,7 +269,17 @@ export default function AgendasPage() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
               Public archive of meeting agendas and board packets for the
-              Excelsior-Kings River Resource Conservation District.
+              Excelsior-Kings River Resource Conservation District, posted in
+              accordance with the{" "}
+              <a
+                href="https://oag.ca.gov/open-meetings"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-semibold underline hover:text-white/80 transition-colors"
+              >
+                California Open Meetings Act
+              </a>
+              .
             </p>
           </div>
         </div>

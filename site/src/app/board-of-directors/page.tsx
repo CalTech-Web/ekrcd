@@ -155,7 +155,16 @@ export default function BoardOfDirectorsPage() {
                 </h2>
                 <p className="text-text-muted leading-relaxed text-base sm:text-lg">
                   The Board acts as the legislative body for EKRCD, a district
-                  formed to control runoff, prevent soil erosion, develop and
+                  formed under the oversight of the{" "}
+                  <a
+                    href="https://www.conservation.ca.gov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-semibold hover:underline"
+                  >
+                    California Department of Conservation
+                  </a>{" "}
+                  to control runoff, prevent soil erosion, develop and
                   distribute water, and improve land capabilities across its
                   service area. Board members are elected or appointed from
                   within the district and bring direct knowledge of the land and

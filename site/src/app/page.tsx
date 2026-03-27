@@ -205,8 +205,16 @@ export default function HomePage() {
                 CDFA-Funded Conservation Programs
               </h2>
               <p className="mt-4 text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
-                Two active CDFA-funded programs open to growers across the
-                three-county region. Both are free to participate in.
+                Two active programs funded by the{" "}
+                <a
+                  href="https://www.cdfa.ca.gov/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 font-semibold underline hover:text-white transition-colors"
+                >
+                  California Department of Food and Agriculture
+                </a>{" "}
+                open to growers across the three-county region. Both are free to participate in.
               </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

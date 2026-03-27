@@ -246,7 +246,16 @@ export default function ContactPage() {
               <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
                 Whether you are a grower, a landowner, or a community member,
                 there are many reasons to reach out to your local conservation
-                district.
+                district - part of{" "}
+                <a
+                  href="https://carcd.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-semibold hover:underline"
+                >
+                  California&apos;s statewide network of resource conservation districts
+                </a>
+                .
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
