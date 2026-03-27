@@ -121,7 +121,7 @@ export default function BoardOfDirectorsPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
@@ -143,8 +143,12 @@ export default function BoardOfDirectorsPage() {
       <ScrollReveal>
         <section className="py-16 sm:py-20 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary text-sm font-medium mb-5">
+                  <Shield size={16} />
+                  District Governance
+                </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 font-[family-name:var(--font-heading)]">
                   Purpose of the Board
                 </h2>
@@ -157,6 +161,20 @@ export default function BoardOfDirectorsPage() {
                   operations they represent.
                 </p>
               </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <p className="text-3xl font-bold text-primary font-[family-name:var(--font-heading)]">5</p>
+                  <p className="text-sm text-text-muted mt-1">Board Members</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                  <p className="text-3xl font-bold text-secondary font-[family-name:var(--font-heading)]">3</p>
+                  <p className="text-sm text-text-muted mt-1">Counties Served</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center col-span-2">
+                  <p className="text-lg font-bold text-accent font-[family-name:var(--font-heading)]">Locally Elected</p>
+                  <p className="text-sm text-text-muted mt-1">Members come from within the district they serve</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -164,30 +182,35 @@ export default function BoardOfDirectorsPage() {
 
       {/* Membership Composition */}
       <ScrollReveal>
-        <section className="py-16 sm:py-20">
+        <section className="py-16 sm:py-20 bg-primary-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Membership Composition
+              <h2 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+                Who Can Serve?
               </h2>
-              <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                To serve on the EKRCD board, a person must satisfy at least one
-                of the following criteria.
+              <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+                Board candidates must meet at least one of the following
+                eligibility requirements.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {requirements.map((req) => (
+              {requirements.map((req, i) => (
                 <div
                   key={req.title}
-                  className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <req.icon size={24} className="text-primary" />
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                      <req.icon size={24} className="text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-white/50 uppercase tracking-wider">
+                      Path {i + 1}
+                    </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                  <h3 className="text-lg font-semibold text-white mb-3">
                     {req.title}
                   </h3>
-                  <p className="text-text-muted text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm leading-relaxed">
                     {req.description}
                   </p>
                 </div>
@@ -202,11 +225,16 @@ export default function BoardOfDirectorsPage() {
         <section className="py-16 sm:py-20 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary text-sm font-medium mb-4">
+                <Users size={16} />
+                Leadership
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Current Board Members
+                Meet the Board
               </h2>
               <p className="mt-3 text-text-muted max-w-2xl mx-auto">
-                The five members currently serving EKRCD.
+                The people behind the policy - five members who live and work in
+                the communities EKRCD serves.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -215,20 +243,22 @@ export default function BoardOfDirectorsPage() {
                 return (
                   <div
                     key={member.name}
-                    className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center"
+                    className="group card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
                   >
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                      <Users size={28} className="text-primary" />
+                    <div className={`h-2 ${badge.bg.replace("/10", "")}`} />
+                    <div className="p-8 text-center">
+                      <div className={`w-16 h-16 rounded-full ${badge.bg} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform`}>
+                        <badge.icon size={28} className={badge.text} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {member.name}
+                      </h3>
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium border ${badge.bg} ${badge.text} ${badge.border}`}
+                      >
+                        {member.role}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {member.name}
-                    </h3>
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium border ${badge.bg} ${badge.text} ${badge.border}`}
-                    >
-                      <badge.icon size={14} />
-                      {member.role}
-                    </span>
                   </div>
                 );
               })}

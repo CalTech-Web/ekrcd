@@ -64,15 +64,15 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo only */}
+          {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.webp"
               alt="EKRCD Logo"
-              width={72}
-              height={72}
-              className={`rounded-full transition-all duration-300 ${
-                scrolled ? "" : "ring-2 ring-white/40"
+              width={206}
+              height={48}
+              className={`h-10 sm:h-12 w-auto transition-all duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
               }`}
               priority
             />

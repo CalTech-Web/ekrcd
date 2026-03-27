@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
@@ -13,14 +14,29 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="relative bg-primary-dark text-white overflow-hidden">
+      {/* Background watermark icon */}
+      <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 opacity-[0.06] pointer-events-none">
+        <Image
+          src="/images/icon.webp"
+          alt=""
+          fill
+          className="object-contain"
+          aria-hidden="true"
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-[family-name:var(--font-heading)]">
-              EKRCD
-            </h3>
+            <Image
+              src="/images/logo.webp"
+              alt="EKRCD Logo"
+              width={180}
+              height={42}
+              className="brightness-0 invert mb-4"
+            />
             <p className="text-white/80 text-sm leading-relaxed">
               The Excelsior-Kings River Resource Conservation District is
               dedicated to improving ground and surface water conservation

@@ -256,7 +256,7 @@ export default function AgendasPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-medium mb-6">
@@ -274,72 +274,115 @@ export default function AgendasPage() {
         </div>
       </section>
 
-      {/* Agendas Timeline */}
-      <section className="py-16 sm:py-20 bg-sand">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {agendaData.map((yearGroup, yearIdx) => (
-            <ScrollReveal key={yearGroup.year}>
-              <div className={yearIdx > 0 ? "mt-14" : ""}>
-                {/* Year Header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                    {yearGroup.year}
-                  </h2>
-                  <div className="flex-1 h-px bg-gray-200" />
-                  <span className="text-sm text-text-muted font-medium">
-                    {yearGroup.meetings.length}{" "}
-                    {yearGroup.meetings.length === 1 ? "meeting" : "meetings"}
-                  </span>
-                </div>
-
-                {/* Meeting List */}
-                <div className="space-y-3">
-                  {yearGroup.meetings.map((meeting) => {
-                    const config = getStatusConfig(meeting.status);
-                    return (
-                      <div
-                        key={`${meeting.date}-${meeting.file}`}
-                        className="card-hover bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-gray-100"
-                      >
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-                          {/* Date */}
-                          <div className="flex items-center gap-3 sm:min-w-[160px]">
-                            <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                            <span className="font-semibold text-foreground">
-                              {meeting.date}
-                            </span>
-                          </div>
-
-                          {/* Status Badge */}
-                          <span
-                            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border w-fit ${config.bg} ${config.text} ${config.border}`}
-                          >
-                            <config.icon size={12} />
-                            {meeting.statusNote || config.label}
-                          </span>
-
-                          {/* Spacer */}
-                          <div className="hidden sm:block flex-1" />
-
-                          {/* Download Button */}
-                          <Link
-                            href={`/files/agendas/${meeting.file}`}
-                            target="_blank"
-                            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-light transition-colors w-fit"
-                          >
-                            <Download size={14} />
-                            Download PDF
-                          </Link>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+      {/* Current Year - 2026 */}
+      <ScrollReveal>
+        <section className="py-16 sm:py-20 bg-sand">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="bg-primary text-white text-2xl sm:text-3xl font-bold px-5 py-2 rounded-xl font-[family-name:var(--font-heading)]">
+                2026
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
+              <div>
+                <p className="font-semibold text-foreground text-lg">Current Year</p>
+                <p className="text-text-muted text-sm">
+                  {agendaData[0].meetings.length} meetings on record
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {agendaData[0].meetings.map((meeting) => {
+                const config = getStatusConfig(meeting.status);
+                return (
+                  <Link
+                    key={`${meeting.date}-${meeting.file}`}
+                    href={`/files/agendas/${meeting.file}`}
+                    target="_blank"
+                    className="group card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col"
+                  >
+                    <div className={`px-6 py-4 ${config.bg} border-b ${config.border}`}>
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-foreground text-lg">
+                          {meeting.date}
+                        </span>
+                        <span
+                          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${config.text}`}
+                        >
+                          <config.icon size={12} />
+                          {config.label}
+                        </span>
+                      </div>
+                      {meeting.statusNote && (
+                        <p className={`text-xs mt-1 ${config.text}`}>
+                          {meeting.statusNote}
+                        </p>
+                      )}
+                    </div>
+                    <div className="p-6 flex items-center gap-3 flex-1">
+                      <FileText size={20} className="text-primary shrink-0" />
+                      <span className="text-sm text-text-muted flex-1">
+                        Board Meeting {meeting.status === "Canceled" ? "Cancellation" : "Agenda & Packet"}
+                      </span>
+                      <Download
+                        size={16}
+                        className="text-primary group-hover:translate-y-0.5 transition-transform shrink-0"
+                      />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Archive Years */}
+      {agendaData.slice(1).map((yearGroup) => (
+        <ScrollReveal key={yearGroup.year}>
+          <section className="py-12 sm:py-16 border-t border-gray-100">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                  {yearGroup.year}
+                </h2>
+                <div className="flex-1 h-px bg-gray-200" />
+                <span className="text-sm text-text-muted bg-gray-100 px-3 py-1 rounded-full font-medium">
+                  {yearGroup.meetings.length} meetings
+                </span>
+              </div>
+              <div className="space-y-2">
+                {yearGroup.meetings.map((meeting) => {
+                  const config = getStatusConfig(meeting.status);
+                  return (
+                    <Link
+                      key={`${meeting.date}-${meeting.file}`}
+                      href={`/files/agendas/${meeting.file}`}
+                      target="_blank"
+                      className="group flex items-center gap-4 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
+                    >
+                      <div className={`w-2 h-8 rounded-full ${meeting.status === "Canceled" ? "bg-red-300" : meeting.status === "Rescheduled" ? "bg-amber-300" : "bg-primary/60"}`} />
+                      <span className="font-semibold text-foreground min-w-[130px]">
+                        {meeting.date}
+                      </span>
+                      <span
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${config.bg} ${config.text} ${config.border}`}
+                      >
+                        <config.icon size={11} />
+                        {meeting.statusNote || config.label}
+                      </span>
+                      <div className="flex-1" />
+                      <span className="hidden sm:inline-flex items-center gap-1.5 text-sm text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Download size={14} />
+                        PDF
+                      </span>
+                      <Download size={14} className="sm:hidden text-primary shrink-0" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      ))}
 
       {/* Related Links */}
       <ScrollReveal>

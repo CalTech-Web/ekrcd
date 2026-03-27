@@ -29,16 +29,16 @@ export default function HomePage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/45 to-black/25" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Image
-                src="/images/logo.jpg"
-                alt="EKRCD logo"
-                width={64}
-                height={64}
-                className="rounded-full border-2 border-white/30"
+                src="/images/icon.webp"
+                alt="EKRCD icon"
+                width={72}
+                height={72}
+                className="drop-shadow-lg"
                 priority
               />
             </div>
@@ -89,80 +89,106 @@ export default function HomePage() {
         <section className="py-20 sm:py-24 bg-sand">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary text-sm font-medium mb-4">
+                <FileText size={16} />
+                Public Records
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
                 Open Government &amp; Transparency
               </h2>
               <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
-                All board meeting agendas and packets are posted publicly.
-                Meeting records go back to 2024.
+                Every board meeting agenda and packet is posted here for public
+                review. Our records go back to 2024 and are updated before each
+                scheduled meeting.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Link
                 href="/files/agendas/Meeting-Cancellation-Notice.pdf"
                 target="_blank"
-                className="group flex flex-col bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover"
+                className="group flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 card-hover overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-secondary/10">
-                  <FileText
-                    size={28}
-                    className="text-secondary group-hover:scale-110 transition-transform"
-                  />
+                <div className="bg-secondary/10 p-6 flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-secondary/15 shrink-0">
+                    <FileText size={28} className="text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      Latest Agenda
+                    </h3>
+                    <p className="text-secondary text-xs font-medium uppercase tracking-wider">
+                      March 2026
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Latest Agenda
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed flex-1">
-                  March 18, 2026 meeting cancellation notice
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
-                  View Agenda
-                  <ArrowRight size={16} />
-                </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-text-muted text-sm leading-relaxed flex-1">
+                    March 18, 2026 regular meeting has been canceled. View the
+                    official cancellation notice.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-secondary group-hover:gap-3 transition-all">
+                    View Agenda
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
               </Link>
 
               <Link
                 href="/agendas"
-                className="group flex flex-col bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover"
+                className="group flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 card-hover overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-accent/10">
-                  <Archive
-                    size={28}
-                    className="text-accent group-hover:scale-110 transition-transform"
-                  />
+                <div className="bg-accent/10 p-6 flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-accent/15 shrink-0">
+                    <Archive size={28} className="text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      Agendas Archive
+                    </h3>
+                    <p className="text-accent text-xs font-medium uppercase tracking-wider">
+                      Since April 2024
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Agendas Archive
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed flex-1">
-                  Every agenda and board packet since April 2024
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
-                  Browse Archive
-                  <ArrowRight size={16} />
-                </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-text-muted text-sm leading-relaxed flex-1">
+                    Browse the full archive of board meeting agendas, packets,
+                    and special meeting notices.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent group-hover:gap-3 transition-all">
+                    Browse Archive
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
               </Link>
 
               <Link
                 href="/contact"
-                className="group flex flex-col bg-white rounded-2xl p-8 shadow-sm border border-gray-100 card-hover"
+                className="group flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 card-hover overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-primary/10">
-                  <Phone
-                    size={28}
-                    className="text-primary group-hover:scale-110 transition-transform"
-                  />
+                <div className="bg-primary/10 p-6 flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-primary/15 shrink-0">
+                    <Phone size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      Contact Us
+                    </h3>
+                    <p className="text-primary text-xs font-medium uppercase tracking-wider">
+                      We respond promptly
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Contact Us
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed flex-1">
-                  Questions about programs or how to get involved? We are here.
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
-                  Get In Touch
-                  <ArrowRight size={16} />
-                </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-text-muted text-sm leading-relaxed flex-1">
+                    Have questions about a program, a board meeting, or how to
+                    get involved? Reach out any time.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                    Get In Touch
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
               </Link>
             </div>
           </div>
@@ -277,55 +303,61 @@ export default function HomePage() {
       </ScrollReveal>
 
       {/* Impact Stats Band */}
-      <section className="py-16 sm:py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-6">
-            {[
-              {
-                value: 500000,
-                prefix: "$",
-                label: "WELLUP Program Funding",
-              },
-              {
-                value: 5000000,
-                prefix: "$",
-                label: "HSP Grant Total",
-              },
-              {
-                value: 20,
-                prefix: "",
-                label: "Farms Funded in Round 1",
-              },
-              {
-                value: 2600000,
-                prefix: "$",
-                label: "Awarded in HSP Round 1",
-              },
-              {
-                value: 3,
-                prefix: "",
-                label: "Counties Served",
-                subtitle: "Fresno, Kings & Tulare",
-              },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
-                  <CountUp
-                    end={stat.value}
-                    prefix={stat.prefix}
-                    duration={2200}
-                  />
-                </p>
-                <p className="mt-2 text-sm text-white/70 leading-snug">
-                  {stat.label}
-                </p>
-                {stat.subtitle && (
-                  <p className="mt-0.5 text-xs text-white/50">
-                    {stat.subtitle}
-                  </p>
-                )}
-              </div>
-            ))}
+      <section className="relative py-20 sm:py-24 overflow-hidden">
+        <Image
+          src="/images/heroes/hero-homepage-almond-blossoms.jpeg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-primary-dark/90" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+              Our Impact in Numbers
+            </h2>
+            <p className="mt-3 text-white/60 max-w-xl mx-auto">
+              Real results from CDFA-funded programs across the Central Valley.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-white/10">
+              <Droplets size={28} className="text-secondary mx-auto mb-3" />
+              <p className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+                <CountUp end={500} prefix="$" suffix="K" duration={2000} />
+              </p>
+              <p className="mt-2 text-sm text-white/60">
+                WELLUP Program Funding
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-white/10">
+              <Sprout size={28} className="text-accent mx-auto mb-3" />
+              <p className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+                <CountUp end={5} prefix="$" suffix="M" duration={2000} />
+              </p>
+              <p className="mt-2 text-sm text-white/60">HSP Grant Total</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-white/10">
+              <Users size={28} className="text-white/80 mx-auto mb-3" />
+              <p className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+                <CountUp end={20} duration={2000} />
+              </p>
+              <p className="mt-2 text-sm text-white/60">
+                Farms Funded in Round 1
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 text-center border border-white/10">
+              <MapPin size={28} className="text-white/80 mx-auto mb-3" />
+              <p className="text-3xl sm:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
+                <CountUp end={3} duration={2000} />
+              </p>
+              <p className="mt-2 text-sm text-white/60">Counties Served</p>
+              <p className="text-xs text-white/40 mt-0.5">
+                Fresno, Kings &amp; Tulare
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -420,58 +452,38 @@ export default function HomePage() {
 
       {/* Resource Partners */}
       <ScrollReveal>
-        <section className="py-16 sm:py-20">
+        <section className="py-16 sm:py-20 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-[family-name:var(--font-heading)]">
-                Our Resource Partners
-              </h2>
-              <p className="mt-4 text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
-                The agencies and organizations EKRCD collaborates with to
-                deliver conservation services across the region.
+            <div className="text-center mb-10">
+              <p className="text-sm font-medium text-text-muted uppercase tracking-wider mb-3">
+                Working Together For Conservation
               </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground font-[family-name:var(--font-heading)]">
+                Trusted By Leading Agencies
+              </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {[
-                {
-                  name: "NRCS",
-                  full: "Natural Resources Conservation Service",
-                  icon: BookOpen,
-                },
-                {
-                  name: "Kings River Conservation District",
-                  full: "Kings River Conservation District",
-                  icon: Droplets,
-                },
-                {
-                  name: "Kings County Farm Bureau",
-                  full: "Kings County Farm Bureau",
-                  icon: Sprout,
-                },
-                {
-                  name: "CARCD",
-                  full: "California Association of Resource Conservation Districts",
-                  icon: Handshake,
-                },
-              ].map((partner) => (
+                "NRCS",
+                "Kings River Conservation District",
+                "Kings County Farm Bureau",
+                "CARCD",
+              ].map((name, i) => (
                 <div
-                  key={partner.name}
-                  className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all text-center"
+                  key={name}
+                  className="flex items-center gap-3 group"
                 >
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/15 transition-colors">
-                    <partner.icon
-                      size={24}
-                      className="text-primary group-hover:scale-110 transition-transform"
-                    />
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    {[
+                      <BookOpen key={0} size={18} className="text-primary" />,
+                      <Droplets key={1} size={18} className="text-secondary" />,
+                      <Sprout key={2} size={18} className="text-accent" />,
+                      <Handshake key={3} size={18} className="text-primary" />,
+                    ][i]}
                   </div>
-                  <h3 className="font-semibold text-foreground text-sm">
-                    {partner.name}
-                  </h3>
-                  {partner.name !== partner.full && (
-                    <p className="mt-1 text-text-muted text-xs leading-snug">
-                      {partner.full}
-                    </p>
-                  )}
+                  <span className="font-semibold text-foreground text-sm sm:text-base">
+                    {name}
+                  </span>
                 </div>
               ))}
             </div>
