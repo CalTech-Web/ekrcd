@@ -5,7 +5,7 @@ import { Users, Vote, MapPin, UserCheck, Shield, Crown } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Board of Directors - EKRCD Conservation District Governance",
+  title: "Board of Directors - Conservation District Governance",
   description:
     "Meet the five locally elected EKRCD board of directors governing conservation programs across Fresno, Kings, and Tulare Counties in Central California.",
   alternates: { canonical: "/board-of-directors" },

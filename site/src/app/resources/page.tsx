@@ -19,7 +19,7 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Conservation Resource Partners Central California - EKRCD",
+  title: "Conservation Resource Partners - Central California",
   description:
     "EKRCD conservation resource partners including NRCS, CARCD, Kings River Conservation District, and Kings County Farm Bureau serving Central California.",
   alternates: { canonical: "/resources" },

@@ -28,7 +28,7 @@ const ContactForm = dynamic(() => import("@/components/ContactForm"), {
 });
 
 export const metadata: Metadata = {
-  title: "Contact EKRCD Conservation District - Hanford, CA",
+  title: "Contact Us - Conservation District Hanford, CA",
   description:
     "Contact EKRCD conservation district in Hanford, CA. Call (559) 309-4030 or email info@ekrcd.org for free WELLUP and Healthy Soils program assistance.",
   alternates: { canonical: "/contact" },

@@ -25,7 +25,7 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Healthy Soils Program California - Grants Up to $200,000 | EKRCD",
+  title: "Healthy Soils Program California - Grants Up to $200,000",
   description:
     "CDFA Healthy Soils Program grants up to $200,000 for California growers. EKRCD funds compost, cover crops, and mulching in Fresno, Kings, and Tulare Counties.",
   alternates: { canonical: "/hsp" },
